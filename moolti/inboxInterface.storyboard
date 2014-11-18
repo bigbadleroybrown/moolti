@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Inbox Interface-->
+        <scene sceneID="J5w-jT-KQQ">
+            <objects>
+                <tableViewController id="se4-z3-flx" customClass="inboxInterface" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZXc-7d-hkU">
+                        <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lnY-nY-Jrd" customClass="inboxInterfaceCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lnY-nY-Jrd" id="O2T-4M-XVF">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akZ-US-sm7">
+                                            <rect key="frame" x="15" y="4" width="37" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="37" id="0eA-Dc-sK4"/>
+                                                <constraint firstAttribute="width" constant="37" id="nMx-Ul-44o"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZd-7J-O49">
+                                            <rect key="frame" x="66" y="12" width="208" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="208" id="6VG-MH-GkJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="akZ-US-sm7" firstAttribute="leading" secondItem="lnY-nY-Jrd" secondAttribute="leading" constant="15" id="CiI-Wq-jUW"/>
+                                    <constraint firstItem="RZd-7J-O49" firstAttribute="leading" secondItem="lnY-nY-Jrd" secondAttribute="leading" constant="66" id="bN6-Vz-9oX"/>
+                                    <constraint firstItem="akZ-US-sm7" firstAttribute="centerY" secondItem="lnY-nY-Jrd" secondAttribute="centerY" id="cmQ-ha-X3x"/>
+                                    <constraint firstItem="RZd-7J-O49" firstAttribute="centerY" secondItem="akZ-US-sm7" secondAttribute="centerY" id="l1h-xA-xQW"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="fileLabel" destination="RZd-7J-O49" id="MuP-Ko-ZIo"/>
+                                    <outlet property="thumbnail" destination="akZ-US-sm7" id="pHc-ry-Y9Y"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="se4-z3-flx" id="bo4-la-ThD"/>
+                            <outlet property="delegate" destination="se4-z3-flx" id="4ny-xz-kcf"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rrk-Zh-KDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="76"/>
+        </scene>
+    </scenes>
+</document>
