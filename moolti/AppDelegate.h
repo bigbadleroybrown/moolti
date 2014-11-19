@@ -14,6 +14,8 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, RESideMenuDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSArray *testArray;
+
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

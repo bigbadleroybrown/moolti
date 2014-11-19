@@ -14,6 +14,9 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong) UINavigationController *navController;
+
+
 @end
 
 @implementation AppDelegate
@@ -21,12 +24,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UINavigationController *navigationVC = [[UINavigationController alloc]initWithRootViewController:[[DEMOFirstViewController alloc]init]];
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:_navController];
+    _navController = [[UINavigationController alloc]initWithRootViewController:[[DEMOFirstViewController alloc]init]];
     DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];
     DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc]init];
     
-    RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:navigationVC leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
+    RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
 
     
     sidemenuViewController.backgroundImage = [UIImage imageNamed:@"skyBackground"];
@@ -37,13 +41,15 @@
     sidemenuViewController.contentViewShadowOpacity = 0.6;
     sidemenuViewController.contentViewShadowRadius = 12;
     sidemenuViewController.contentViewShadowEnabled = YES;
-    sidemenuViewController.animationDuration = 0.75;
+    sidemenuViewController.animationDuration = 0.50;
     sidemenuViewController.panGestureEnabled = YES;
     
     self.window.rootViewController = sidemenuViewController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
     
     return YES;
 }

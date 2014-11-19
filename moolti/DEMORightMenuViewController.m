@@ -95,7 +95,7 @@
     NSArray *images = @[@"IconSettings", @"IconEmpty"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    cell.textLabel.textAlignment = NSTextAlignmentRight;
     
     
     
