@@ -12,6 +12,7 @@
 #import "FontAwesomeKit/FontAwesomeKit.h"
 #import "GalleryVC.h"
 #import "MWPhotoBrowser.h"
+#import "CollectionTableView.h"
 
 
 
@@ -22,6 +23,7 @@
 @property (strong, readwrite, nonatomic) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *photos;
 @property (nonatomic, strong) NSMutableArray *thumbs;
+
 
 @end
 
@@ -52,15 +54,15 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSMutableArray *photos = [[NSMutableArray alloc] init];
-    NSMutableArray *thumbs = [[NSMutableArray alloc] init];
-    MWPhoto *photo;
-    
-    BOOL displayActionButton = YES;
-    BOOL displaySelectionButtons = NO;
-    BOOL displayNavArrows = NO;
-    BOOL enableGrid = YES;
-    BOOL startOnGrid = NO;
+//    NSMutableArray *photos = [[NSMutableArray alloc] init];
+//    NSMutableArray *thumbs = [[NSMutableArray alloc] init];
+//    MWPhoto *photo;
+//    
+//    BOOL displayActionButton = YES;
+//    BOOL displaySelectionButtons = NO;
+//    BOOL displayNavArrows = NO;
+//    BOOL enableGrid = YES;
+
     
     switch (indexPath.row) {
         case 0:
@@ -78,58 +80,63 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 3:
-            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3779/9522424255_28a5a9d99c_b.jpg"]];
-             photo.caption = @"Tube";
-             [photos addObject:photo];
-             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3779/9522424255_28a5a9d99c_q.jpg"]]];
-             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3777/9522276829_fdea08ffe2_b.jpg"]];
-             photo.caption = @"Flat White at Elliot's";
-             [photos addObject:photo];
-             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3777/9522276829_fdea08ffe2_q.jpg"]]];
-             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8379/8530199945_47b386320f_b.jpg"]];
-             photo.caption = @"Woburn Abbey";
-             [photos addObject:photo];
-             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8379/8530199945_47b386320f_q.jpg"]]];
-             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8364/8268120482_332d61a89e_b.jpg"]];
-             photo.caption = @"Frosty walk";
-             [photos addObject:photo];
-             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8364/8268120482_332d61a89e_q.jpg"]]];
-             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm8.static.flickr.com/7109/7604416018_f23733881b_b.jpg"]];
-             photo.caption = @"Jury's Inn";
-             [photos addObject:photo];
-             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm8.static.flickr.com/7109/7604416018_f23733881b_q.jpg"]]];
-             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm7.static.flickr.com/6002/6020924733_b21874f14c_b.jpg"]];
-             photo.caption = @"Heavy Rain";
-             [photos addObject:photo];
-             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm7.static.flickr.com/6002/6020924733_b21874f14c_q.jpg"]]];
-             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm5.static.flickr.com/4012/4501918517_5facf1a8c4_b.jpg"]];
-             photo.caption = @"iPad Application Sketch Template v1";
-             [photos addObject:photo];
-             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm5.static.flickr.com/4012/4501918517_5facf1a8c4_q.jpg"]]];
-             displayActionButton = YES;
-             displaySelectionButtons = YES;
-             displayNavArrows = YES;
-             enableGrid = YES;
-             startOnGrid = YES;
-            
-            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-            
-            [self.navigationController pushViewController:browser animated:YES];
-            //[self.navigationController showViewController:browser sender:nil];
-            
-            [browser showNextPhotoAnimated:YES];
-            [browser showPreviousPhotoAnimated:YES];
-            
-            self.photos = photos;
-            self.thumbs = thumbs;
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc]initWithRootViewController:browser] animated:YES];
+//            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3779/9522424255_28a5a9d99c_b.jpg"]];
+//             photo.caption = @"Tube";
+//             [photos addObject:photo];
+//             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3779/9522424255_28a5a9d99c_q.jpg"]]];
+//             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3777/9522276829_fdea08ffe2_b.jpg"]];
+//             photo.caption = @"Flat White at Elliot's";
+//             [photos addObject:photo];
+//             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3777/9522276829_fdea08ffe2_q.jpg"]]];
+//             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8379/8530199945_47b386320f_b.jpg"]];
+//             photo.caption = @"Woburn Abbey";
+//             [photos addObject:photo];
+//             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8379/8530199945_47b386320f_q.jpg"]]];
+//             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8364/8268120482_332d61a89e_b.jpg"]];
+//             photo.caption = @"Frosty walk";
+//             [photos addObject:photo];
+//             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8364/8268120482_332d61a89e_q.jpg"]]];
+//             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm8.static.flickr.com/7109/7604416018_f23733881b_b.jpg"]];
+//             photo.caption = @"Jury's Inn";
+//             [photos addObject:photo];
+//             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm8.static.flickr.com/7109/7604416018_f23733881b_q.jpg"]]];
+//             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm7.static.flickr.com/6002/6020924733_b21874f14c_b.jpg"]];
+//             photo.caption = @"Heavy Rain";
+//             [photos addObject:photo];
+//             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm7.static.flickr.com/6002/6020924733_b21874f14c_q.jpg"]]];
+//             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm5.static.flickr.com/4012/4501918517_5facf1a8c4_b.jpg"]];
+//             photo.caption = @"iPad Application Sketch Template v1";
+//             [photos addObject:photo];
+//             [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm5.static.flickr.com/4012/4501918517_5facf1a8c4_q.jpg"]]];
+//             displayActionButton = YES;
+//             displaySelectionButtons = YES;
+//             displayNavArrows = YES;
+//             enableGrid = YES;
+//            
+//            
+//            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+//            
+//            [self.navigationController pushViewController:browser animated:YES];
+//            [browser showNextPhotoAnimated:YES];
+//            [browser showPreviousPhotoAnimated:YES];
+//            browser.startOnGrid = YES;
+//            browser.displaySelectionButtons = YES;
+//            browser.displayActionButton = YES;
+//           
+//            
+//            self.photos = photos;
+//            self.thumbs = thumbs;
+//            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc]initWithRootViewController:browser] animated:YES];
+//            [self.sideMenuViewController hideMenuViewController];
+//            browser.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
+//                                                                                        style:UIBarButtonItemStylePlain
+//                                                                                       target:self
+//                                                                                       action:@selector(presentLeftMenuViewController:)];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc]initWithRootViewController:[[CollectionTableView alloc]init]]animated:YES];
             [self.sideMenuViewController hideMenuViewController];
-            browser.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
-                                                                                     style:UIBarButtonItemStylePlain
-                                                                                    target:self
-                                                                                    action:@selector(presentLeftMenuViewController:)];
-    }
+        }
 }
+
 
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
     return _photos.count;

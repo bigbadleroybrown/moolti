@@ -6,31 +6,35 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C406B5F1-7E52-4707-87AB-B00361E75222</string>
+	<key>IDESourceControlProjectName</key>
+	<string>moolti</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>63D3BAD6846EA7918E2E3196DBBEACB9127E9251</key>
-		<string>https://github.com/SocialObjects-Software/SOMessaging.git</string>
+		<key>55B72EBAB7F498F207843E477CE7413C9360B0BF</key>
+		<string>github.com:bigbadleroybrown/moolti.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>moolti.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>63D3BAD6846EA7918E2E3196DBBEACB9127E9251</key>
-		<string>SOMessaging/</string>
+		<key>55B72EBAB7F498F207843E477CE7413C9360B0BF</key>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/SocialObjects-Software/SOMessaging.git</string>
+	<string>github.com:bigbadleroybrown/moolti.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>63D3BAD6846EA7918E2E3196DBBEACB9127E9251</string>
+	<string>55B72EBAB7F498F207843E477CE7413C9360B0BF</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>63D3BAD6846EA7918E2E3196DBBEACB9127E9251</string>
+			<string>55B72EBAB7F498F207843E477CE7413C9360B0BF</string>
 			<key>IDESourceControlWCCName</key>
-			<string>SOMessaging</string>
+			<string>moolti</string>
 		</dict>
 	</array>
 </dict>

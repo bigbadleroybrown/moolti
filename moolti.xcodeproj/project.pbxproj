@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E1D53E01A1BA1DD00D304D1 /* DEMORightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1D53DF1A1BA1DD00D304D1 /* DEMORightMenuViewController.m */; };
 		2E1D53E81A1BEBE500D304D1 /* GalleryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1D53E71A1BEBE500D304D1 /* GalleryVC.m */; };
+		2E1D53EC1A1D0F8D00D304D1 /* CollectionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1D53EB1A1D0F8D00D304D1 /* CollectionTableView.m */; };
 		2E9407181A166E920099F37C /* mainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9407171A166E920099F37C /* mainMenuVC.m */; };
 		2E94073D1A1A8C6A0099F37C /* inboxInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */; };
 		2E9407401A1A8CE90099F37C /* inboxInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E94073F1A1A8CE90099F37C /* inboxInterface.m */; };
@@ -68,6 +69,8 @@
 		2E1D53DF1A1BA1DD00D304D1 /* DEMORightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMORightMenuViewController.m; sourceTree = "<group>"; };
 		2E1D53E61A1BEBE500D304D1 /* GalleryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryVC.h; sourceTree = "<group>"; };
 		2E1D53E71A1BEBE500D304D1 /* GalleryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryVC.m; sourceTree = "<group>"; };
+		2E1D53EA1A1D0F8D00D304D1 /* CollectionTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionTableView.h; sourceTree = "<group>"; };
+		2E1D53EB1A1D0F8D00D304D1 /* CollectionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionTableView.m; sourceTree = "<group>"; };
 		2E9407161A166E920099F37C /* mainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainMenuVC.h; sourceTree = "<group>"; };
 		2E9407171A166E920099F37C /* mainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainMenuVC.m; sourceTree = "<group>"; };
 		2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = inboxInterface.storyboard; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				2E9407471A1A92240099F37C /* DEMOFirstViewController.m */,
 				2E9407491A1A92300099F37C /* DEMOLeftMenuViewController.h */,
 				2E94074A1A1A92300099F37C /* DEMOLeftMenuViewController.m */,
+				2E1D53EA1A1D0F8D00D304D1 /* CollectionTableView.h */,
+				2E1D53EB1A1D0F8D00D304D1 /* CollectionTableView.m */,
 				2E1D53DE1A1BA1DD00D304D1 /* DEMORightMenuViewController.h */,
 				2E1D53DF1A1BA1DD00D304D1 /* DEMORightMenuViewController.m */,
 			);
@@ -467,6 +472,7 @@
 				2ECE5E841A159DA0000F78BD /* moolti.xcdatamodeld in Sources */,
 				2E9407181A166E920099F37C /* mainMenuVC.m in Sources */,
 				2E1D53E81A1BEBE500D304D1 /* GalleryVC.m in Sources */,
+				2E1D53EC1A1D0F8D00D304D1 /* CollectionTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
