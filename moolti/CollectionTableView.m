@@ -7,8 +7,9 @@
 //
 
 #import "CollectionTableView.h"
+#import "CollectionCell.h"
 
-@interface CollectionTableView () <MWPhotoBrowserDelegate> {
+@interface CollectionTableView () <UITableViewDelegate,MWPhotoBrowserDelegate> {
     NSMutableArray *_selections;
 }
 
@@ -17,6 +18,10 @@
 @end
 
 @implementation CollectionTableView
+{
+    NSArray *tableData;
+    NSArray *thumbnails;
+}
 
 -(id)initWithStyle:(UITableViewStyle)style {
     if (self=[super initWithStyle:style]) {
@@ -32,11 +37,19 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     
+    self.view.backgroundColor = [UIColor blackColor];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    self.tableView.separatorColor =[UIColor clearColor];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    tableData = @[@"photo1.jpg", @"photo2.jpg",@"photo3.jpg", @"photo4.jpg", @"photo5.jpg", @"photo6.jpg", @"photo7.jpg",@"photo8.jpg"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,31 +78,40 @@
         if (_assets.count) rows++;
     }
     return rows;
-    
+
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [tableData count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 110;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"CollectionCell";
+    CollectionCell *cell = (CollectionCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell==nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CollectionCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
-    // Configure the cell...
     
-    switch (indexPath.row) {
-        case 0:
-            cell.textLabel.text = @"First Test Collection";
-            cell.detailTextLabel.text = @"Spring 2015 Resort";
-            break;
-            
-        default:
-            break;
-    }
+    cell.CollectionName.text = @"Test Collection";
+    cell.CollectionSubLabel.text = @"Spring 2015 Collection";
+//    NSURL *imageURL = [NSURL URLWithString:@"http://farm7.static.flickr.com/6002/6020924733_b21874f14c_b.jpg"];
+//    NSData *data = [NSData dataWithContentsOfURL:imageURL];
+//    cell.CollectionImage.image = [UIImage imageWithData:data];
+    cell.CollectionImage.image = [UIImage imageNamed:[tableData objectAtIndex:indexPath.row]];
+    
+    cell.backgroundColor = [UIColor blackColor];
+    cell.textLabel.font = [UIFont fontWithName:@"Avenir Light" size:12];
+    cell.CollectionName.textColor = [UIColor whiteColor];
+    cell.CollectionSubLabel.textColor = [UIColor whiteColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     
     return cell;
 }
