@@ -61,7 +61,6 @@
 		2E1D54CC1A1EA58300D304D1 /* ce2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54CB1A1EA58300D304D1 /* ce2.jpg */; };
 		2E1D54CE1A1EA6AA00D304D1 /* photo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54CD1A1EA6AA00D304D1 /* photo2.jpg */; };
 		2E1D54D11A1F9B4700D304D1 /* photo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54D01A1F9B4700D304D1 /* photo1.jpg */; };
-		2E9407181A166E920099F37C /* mainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9407171A166E920099F37C /* mainMenuVC.m */; };
 		2E94073D1A1A8C6A0099F37C /* inboxInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */; };
 		2E9407401A1A8CE90099F37C /* inboxInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E94073F1A1A8CE90099F37C /* inboxInterface.m */; };
 		2E9407431A1A8D6A0099F37C /* inboxInterfaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9407421A1A8D6A0099F37C /* inboxInterfaceCell.m */; };
@@ -96,7 +95,6 @@
 		2ECE5E7E1A159DA0000F78BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E7D1A159DA0000F78BD /* main.m */; };
 		2ECE5E811A159DA0000F78BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E801A159DA0000F78BD /* AppDelegate.m */; };
 		2ECE5E841A159DA0000F78BD /* moolti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E821A159DA0000F78BD /* moolti.xcdatamodeld */; };
-		2ECE5E871A159DA0000F78BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E861A159DA0000F78BD /* ViewController.m */; };
 		2ECE5E8A1A159DA0000F78BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ECE5E881A159DA0000F78BD /* Main.storyboard */; };
 		2ECE5E8C1A159DA0000F78BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ECE5E8B1A159DA0000F78BD /* Images.xcassets */; };
 		2ECE5E8F1A159DA0000F78BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ECE5E8D1A159DA0000F78BD /* LaunchScreen.xib */; };
@@ -174,8 +172,6 @@
 		2E1D54CB1A1EA58300D304D1 /* ce2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ce2.jpg; sourceTree = "<group>"; };
 		2E1D54CD1A1EA6AA00D304D1 /* photo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo2.jpg; sourceTree = "<group>"; };
 		2E1D54D01A1F9B4700D304D1 /* photo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo1.jpg; sourceTree = "<group>"; };
-		2E9407161A166E920099F37C /* mainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainMenuVC.h; sourceTree = "<group>"; };
-		2E9407171A166E920099F37C /* mainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainMenuVC.m; sourceTree = "<group>"; };
 		2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = inboxInterface.storyboard; sourceTree = "<group>"; };
 		2E94073E1A1A8CE90099F37C /* inboxInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inboxInterface.h; sourceTree = "<group>"; };
 		2E94073F1A1A8CE90099F37C /* inboxInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inboxInterface.m; sourceTree = "<group>"; };
@@ -217,8 +213,6 @@
 		2ECE5E7F1A159DA0000F78BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2ECE5E801A159DA0000F78BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2ECE5E831A159DA0000F78BD /* moolti.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moolti.xcdatamodel; sourceTree = "<group>"; };
-		2ECE5E851A159DA0000F78BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2ECE5E861A159DA0000F78BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2ECE5E891A159DA0000F78BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2ECE5E8B1A159DA0000F78BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2ECE5E8E1A159DA0000F78BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -406,13 +400,9 @@
 				2E1D53E61A1BEBE500D304D1 /* GalleryVC.h */,
 				2E1D53E71A1BEBE500D304D1 /* GalleryVC.m */,
 				2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */,
-				2ECE5E851A159DA0000F78BD /* ViewController.h */,
 				2E1D53ED1A1D613400D304D1 /* CollectionCell.xib */,
 				2E1D53EF1A1D617D00D304D1 /* CollectionCell.h */,
 				2E1D53F01A1D617D00D304D1 /* CollectionCell.m */,
-				2ECE5E861A159DA0000F78BD /* ViewController.m */,
-				2E9407161A166E920099F37C /* mainMenuVC.h */,
-				2E9407171A166E920099F37C /* mainMenuVC.m */,
 				2ECE5E881A159DA0000F78BD /* Main.storyboard */,
 				2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */,
 				2E9407411A1A8D6A0099F37C /* inboxInterfaceCell.h */,
@@ -681,9 +671,7 @@
 				2ECE5E7E1A159DA0000F78BD /* main.m in Sources */,
 				2E1D53E01A1BA1DD00D304D1 /* DEMORightMenuViewController.m in Sources */,
 				2E9407401A1A8CE90099F37C /* inboxInterface.m in Sources */,
-				2ECE5E871A159DA0000F78BD /* ViewController.m in Sources */,
 				2ECE5E841A159DA0000F78BD /* moolti.xcdatamodeld in Sources */,
-				2E9407181A166E920099F37C /* mainMenuVC.m in Sources */,
 				2E1D53E81A1BEBE500D304D1 /* GalleryVC.m in Sources */,
 				2E1D53F11A1D617D00D304D1 /* CollectionCell.m in Sources */,
 				2E1D53EC1A1D0F8D00D304D1 /* CollectionTableView.m in Sources */,

@@ -33,6 +33,7 @@
     RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
 
     
+    //general menu settings
     sidemenuViewController.backgroundImage = [UIImage imageNamed:@"homebackground"];
     
     sidemenuViewController.menuPreferredStatusBarStyle = 1;

@@ -105,24 +105,20 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CollectionCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    //cell labels
     cell.CollectionName.text = [titles objectAtIndex:indexPath.row];
     cell.CollectionSubLabel.text = @"Spring 2015 Ready-to-Wear";
+    cell.CollectionName.textColor = [UIColor whiteColor];
+    cell.CollectionSubLabel.textColor = [UIColor whiteColor];
     
-
-//    CGFloat scaleX = cell.CollectionImage.bounds.size.width / cell.CollectionImage.image.size.width;
-//    CGFloat scaleY = cell.CollectionImage.bounds.size.height / cell.CollectionImage.image.size.height;
-//    CGFloat scale = MAX (scaleX, scaleY);
-//    
-//    cell.CollectionImage.frame = CGRectMake(0, 0, cell.CollectionImage.image.size.width * scale, cell.CollectionImage.image.size.height * scale);
-    
+    //cell image
     cell.CollectionImage.contentMode = UIViewContentModeScaleAspectFit;
     cell.CollectionImage.clipsToBounds = YES;
     cell.CollectionImage.image = [UIImage imageNamed:[tableData objectAtIndex:indexPath.row]];
 
+    //general cell settings
     cell.backgroundColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Avenir Light" size:12];
-    cell.CollectionName.textColor = [UIColor whiteColor];
-    cell.CollectionSubLabel.textColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
