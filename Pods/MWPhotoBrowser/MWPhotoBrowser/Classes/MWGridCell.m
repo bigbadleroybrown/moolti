@@ -28,12 +28,12 @@
     if ((self = [super initWithFrame:frame])) {
         
         // Grey background
-        self.backgroundColor = [UIColor colorWithWhite:0.12 alpha:1];
+        self.backgroundColor = [UIColor blackColor];//[UIColor colorWithWhite:0.12 alpha:1];
         
         // Image
         _imageView = [UIImageView new];
         _imageView.frame = self.bounds;
-        _imageView.contentMode = UIViewContentModeScaleAspectFill;
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         _imageView.clipsToBounds = YES;
         _imageView.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:_imageView];

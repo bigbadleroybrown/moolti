@@ -21,6 +21,7 @@
 {
     NSArray *tableData;
     NSArray *thumbnails;
+    NSArray *titles;
 }
 
 -(id)initWithStyle:(UITableViewStyle)style {
@@ -43,14 +44,21 @@
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     self.tableView.separatorColor =[UIColor clearColor];
     
+//    self.tableView.estimatedRowHeight = 78.0;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+     self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    tableData = @[@"photo1.jpg", @"photo2.jpg",@"photo3.jpg", @"photo4.jpg", @"photo5.jpg", @"photo6.jpg", @"photo7.jpg",@"photo8.jpg"];
-
+    
+    titles = @[@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg"];
+    tableData = @[@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg"];
+   
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -78,11 +86,10 @@
         if (_assets.count) rows++;
     }
     return rows;
-
-
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return [tableData count];
 }
 
@@ -98,21 +105,25 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CollectionCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    cell.CollectionName.text = [titles objectAtIndex:indexPath.row];
+    cell.CollectionSubLabel.text = @"Spring 2015 Ready-to-Wear";
     
-    cell.CollectionName.text = @"Test Collection";
-    cell.CollectionSubLabel.text = @"Spring 2015 Collection";
-//    NSURL *imageURL = [NSURL URLWithString:@"http://farm7.static.flickr.com/6002/6020924733_b21874f14c_b.jpg"];
-//    NSData *data = [NSData dataWithContentsOfURL:imageURL];
-//    cell.CollectionImage.image = [UIImage imageWithData:data];
+
+//    CGFloat scaleX = cell.CollectionImage.bounds.size.width / cell.CollectionImage.image.size.width;
+//    CGFloat scaleY = cell.CollectionImage.bounds.size.height / cell.CollectionImage.image.size.height;
+//    CGFloat scale = MAX (scaleX, scaleY);
+//    
+//    cell.CollectionImage.frame = CGRectMake(0, 0, cell.CollectionImage.image.size.width * scale, cell.CollectionImage.image.size.height * scale);
+    
+    cell.CollectionImage.contentMode = UIViewContentModeScaleAspectFit;
+    cell.CollectionImage.clipsToBounds = YES;
     cell.CollectionImage.image = [UIImage imageNamed:[tableData objectAtIndex:indexPath.row]];
-    
+
     cell.backgroundColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Avenir Light" size:12];
     cell.CollectionName.textColor = [UIColor whiteColor];
     cell.CollectionSubLabel.textColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-    
     return cell;
 }
 
@@ -124,59 +135,231 @@
     MWPhoto *photo;
     
     BOOL displayActionButton = YES;
-    BOOL displaySelectionButtons = YES;
+    BOOL displaySelectionButtons = NO;
     BOOL displayNavArrows = NO;
     BOOL enableGrid = YES;
     BOOL startOnGrid = YES;
+    
     switch (indexPath.row) {
         
         case 0:
+            //photos
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce1" ofType:@"jpg"]]];
+            photo.caption = @"Look 1";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce2" ofType:@"jpg"]]];
+            photo.caption = @"Look 2";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce3" ofType:@"jpg"]]];
+            photo.caption = @"Look 3";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce4" ofType:@"jpg"]]];
+            photo.caption = @"Look 4";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce5" ofType:@"jpg"]]];
+            photo.caption = @"Look 5";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce6" ofType:@"jpg"]]];
+            photo.caption = @"Look 6";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce7" ofType:@"jpg"]]];
+            photo.caption = @"Look 7";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce8" ofType:@"jpg"]]];
+            photo.caption = @"Look 8";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce9" ofType:@"jpg"]]];
+            photo.caption = @"Look 9";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce10" ofType:@"jpg"]]];
+            photo.caption = @"Look 10";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce10" ofType:@"jpg"]]];
+            photo.caption = @"Look 11";
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo1" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce12" ofType:@"jpg"]]];
+            photo.caption = @"Look 12";
+            [photos addObject:photo];
+            //thumbs
+             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce1" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce2" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce3" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce4" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce5" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo1" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce6" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce7" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce8" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce9" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce10" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce10" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce12" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+
+            //options
             
-            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm7.static.flickr.com/6002/6020924733_b21874f14c_b.jpg"]];
-            photo.caption = @"Heavy Rain";
+            break;
+    
+        case 1: {
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch1" ofType:@"jpg"]]];
             [photos addObject:photo];
-            [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm7.static.flickr.com/6002/6020924733_b21874f14c_q.jpg"]]];
-            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm5.static.flickr.com/4012/4501918517_5facf1a8c4_b.jpg"]];
-            photo.caption = @"iPad Application Sketch Template v1";
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch2" ofType:@"jpg"]]];
             [photos addObject:photo];
-            [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm5.static.flickr.com/4012/4501918517_5facf1a8c4_q.jpg"]]];
-            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm3.static.flickr.com/2667/4072710001_f36316ddc7_b.jpg"]];
-            photo.caption = @"Grotto of the Madonna";
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch3" ofType:@"jpg"]]];
             [photos addObject:photo];
-            [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm3.static.flickr.com/2667/4072710001_f36316ddc7_q.jpg"]]];
-            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm3.static.flickr.com/2449/4052876281_6e068ac860_b.jpg"]];
-            photo.caption = @"Beautiful Eyes";
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch4" ofType:@"jpg"]]];
             [photos addObject:photo];
-            [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm3.static.flickr.com/2449/4052876281_6e068ac860_q.jpg"]]];
-            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3528/4052875665_53e5b4dc61_b.jpg"]];
-            photo.caption = @"Cousin Portrait";
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch5" ofType:@"jpg"]]];
             [photos addObject:photo];
-            [thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3528/4052875665_53e5b4dc61_q.jpg"]]];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch6" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch7" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch8" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch9" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch10" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch11" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch12" ofType:@"jpg"]]];
+            [photos addObject:photo];
             
-            
-            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+            //thumbs
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch1" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch2" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch3" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch4" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch5" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch6" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch7" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch8" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch9" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch10" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch11" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch12" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
             
             //options
             displayActionButton = YES;
-            displaySelectionButtons = YES;
             displayNavArrows = YES;
             enableGrid = YES;
             startOnGrid = YES;
             
+            break;
+            
+        case 2: {
+            
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv1" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv2" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv3" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv4" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv5" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv6" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv7" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv8" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv9" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv10" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv11" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv12" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv13" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv14" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv15" ofType:@"jpg"]]];
+            [photos addObject:photo];
+            
+            //thumbs
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv1" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv2" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv3" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv4" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv5" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv6" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv7" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv8" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv9" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv10" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv11" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv12" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv13" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv14" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv15" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            
+            displayActionButton = YES;
+            displayNavArrows = YES;
+            enableGrid = YES;
+            startOnGrid = YES;
+            
+            }
+        }
+
+    }
+            //photo brower settings
+            self.photos = photos;
+            self.thumbs = thumbs;
+            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
             [browser showNextPhotoAnimated:YES];
             [browser showPreviousPhotoAnimated:YES];
             browser.startOnGrid = YES;
-            browser.displaySelectionButtons = YES;
             browser.displayActionButton = YES;
-            browser.displaySelectionButtons =YES;
+            browser.displaySelectionButtons =NO;
             [browser setCurrentPhotoIndex:1];
-
-            self.photos = photos;
-            self.thumbs = thumbs;
             [self.navigationController pushViewController:browser animated:YES];
     }
-
-}
 
 
 #pragma mark - MWPhotoBrowserDelegate
