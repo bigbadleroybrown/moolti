@@ -36,6 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView reloadData];
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     
     self.view.backgroundColor = [UIColor blackColor];
@@ -95,7 +97,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110;
+    return 112;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -185,23 +187,33 @@
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce3" ofType:@"jpg"]]];
             [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo1" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce4" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce5" ofType:@"jpg"]]];
             [thumbs addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo1" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"house" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce6" ofType:@"jpg"]]];
             [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo1" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce7" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo1" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce8" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce9" ofType:@"jpg"]]];
             [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo1" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce10" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce10" ofType:@"jpg"]]];
+            [thumbs addObject:photo];
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo1" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce12" ofType:@"jpg"]]];
             [thumbs addObject:photo];
@@ -352,6 +364,7 @@
             [browser showPreviousPhotoAnimated:YES];
             browser.startOnGrid = YES;
             browser.displayActionButton = YES;
+            browser.alwaysShowControls = YES;
             browser.displaySelectionButtons =NO;
             [browser setCurrentPhotoIndex:1];
             [self.navigationController pushViewController:browser animated:YES];

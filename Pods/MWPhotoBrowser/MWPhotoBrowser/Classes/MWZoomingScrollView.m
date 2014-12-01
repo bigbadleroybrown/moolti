@@ -204,7 +204,8 @@
     [self hideImageFailure];
 }
 
-#pragma mark - Setup
+#pragma mark - Setup - 
+//USE THIS TO CHANGE IMAGE APPEARANCE ON ZOOM FROM GALLERY
 
 - (CGFloat)initialZoomScaleWithMinScale {
     CGFloat zoomScale = self.minimumZoomScale;
@@ -362,6 +363,7 @@
 		
 		// Zoom out
 		[self setZoomScale:self.minimumZoomScale animated:YES];
+
 		
 	} else {
 		

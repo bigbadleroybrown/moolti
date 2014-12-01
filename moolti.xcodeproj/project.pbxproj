@@ -99,6 +99,7 @@
 		2ECE5E8C1A159DA0000F78BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ECE5E8B1A159DA0000F78BD /* Images.xcassets */; };
 		2ECE5E8F1A159DA0000F78BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ECE5E8D1A159DA0000F78BD /* LaunchScreen.xib */; };
 		2ECE5E9B1A159DA0000F78BD /* mooltiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E9A1A159DA0000F78BD /* mooltiTests.m */; };
+		2EF533EB1A1FCC3300F5FCCF /* house.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EF533EA1A1FCC3300F5FCCF /* house.jpg */; };
 		B851C17534C803B06B8A2619 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2664498DEC717EFBC1ED5361 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +220,7 @@
 		2ECE5E941A159DA0000F78BD /* mooltiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mooltiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ECE5E991A159DA0000F78BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ECE5E9A1A159DA0000F78BD /* mooltiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mooltiTests.m; sourceTree = "<group>"; };
+		2EF533EA1A1FCC3300F5FCCF /* house.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house.jpg; sourceTree = "<group>"; };
 		9444A7C2B6389B10D01D79EA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C65D613D9FBA29311FE8CF9E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -298,6 +300,7 @@
 				2E1D547E1A1E689900D304D1 /* ch10.jpg */,
 				2E1D547F1A1E689900D304D1 /* ch11.jpg */,
 				2E1D54801A1E689900D304D1 /* ch12.jpg */,
+				2EF533EA1A1FCC3300F5FCCF /* house.jpg */,
 				2E1D54811A1E689900D304D1 /* ch2.jpg */,
 				2E1D54821A1E689900D304D1 /* ch3.jpg */,
 				2E1D54831A1E689900D304D1 /* ch4.jpg */,
@@ -559,6 +562,7 @@
 				2E94075A1A1A9A700099F37C /* 10 Great iPhone Tips.pdf in Resources */,
 				2EA0A1361A1B08D600DBFB81 /* bubble_rect_sending.png in Resources */,
 				2ECE5E8A1A159DA0000F78BD /* Main.storyboard in Resources */,
+				2EF533EB1A1FCC3300F5FCCF /* house.jpg in Resources */,
 				2E1D54B81A1E689900D304D1 /* dv1.jpg in Resources */,
 				2E1D54B61A1E689900D304D1 /* ch8.jpg in Resources */,
 				2E1D54AC1A1E689900D304D1 /* ch1.jpg in Resources */,

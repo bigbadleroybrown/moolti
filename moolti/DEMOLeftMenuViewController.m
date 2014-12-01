@@ -163,7 +163,6 @@
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
-    
     return cell;
 }
 
