@@ -132,11 +132,11 @@
     NSMutableArray *thumbs = [[NSMutableArray alloc] init];
     MWPhoto *photo;
     
-    BOOL displayActionButton = YES;
-    BOOL displaySelectionButtons = NO;
-    BOOL displayNavArrows = NO;
-    BOOL enableGrid = YES;
-    BOOL startOnGrid = YES;
+//    BOOL displayActionButton = YES;
+//    BOOL displaySelectionButtons = NO;
+//    BOOL displayNavArrows = NO;
+//    BOOL enableGrid = YES;
+//    BOOL startOnGrid = YES;
     
     switch (indexPath.row) {
         
@@ -275,10 +275,10 @@
             [thumbs addObject:photo];
             
             //options
-            displayActionButton = YES;
-            displayNavArrows = YES;
-            enableGrid = YES;
-            startOnGrid = YES;
+//            displayActionButton = YES;
+//            displayNavArrows = YES;
+//            enableGrid = YES;
+//            startOnGrid = YES;
             
             break;
             
@@ -347,10 +347,10 @@
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv15" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             
-            displayActionButton = YES;
-            displayNavArrows = YES;
-            enableGrid = YES;
-            startOnGrid = YES;
+//            displayActionButton = YES;
+//            displayNavArrows = YES;
+//            enableGrid = YES;
+//            startOnGrid = YES;
             
             }
         }
@@ -362,12 +362,15 @@
             MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
             [browser showNextPhotoAnimated:YES];
             [browser showPreviousPhotoAnimated:YES];
+            browser.enableGrid = YES;
             browser.startOnGrid = YES;
             browser.displayActionButton = YES;
-            browser.alwaysShowControls = YES;
-            browser.displaySelectionButtons =NO;
+            //browser.alwaysShowControls = YES;
+            browser.displaySelectionButtons = NO;
             [browser setCurrentPhotoIndex:1];
-            [self.navigationController pushViewController:browser animated:YES];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+    nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:nc animated:YES completion:nil];
     }
 
 
