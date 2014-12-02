@@ -35,7 +35,6 @@
     
     //general menu settings
     sidemenuViewController.backgroundImage = [UIImage imageNamed:@"homebackground"];
-    
     sidemenuViewController.menuPreferredStatusBarStyle = 1;
     sidemenuViewController.delegate = self;
     sidemenuViewController.contentViewShadowColor = [UIColor blackColor];
@@ -43,12 +42,12 @@
     sidemenuViewController.contentViewShadowOpacity = 0.6;
     sidemenuViewController.contentViewShadowRadius = 12;
     sidemenuViewController.contentViewShadowEnabled = YES;
-    sidemenuViewController.animationDuration = 0.50;
-    sidemenuViewController.panGestureEnabled = YES;
-    sidemenuViewController.scaleBackgroundImageView = YES;
-    sidemenuViewController.scaleContentView = YES;
-    sidemenuViewController.scaleMenuView = YES;
-    sidemenuViewController.menuViewControllerTransformation = CGAffineTransformMakeTranslation(200, 90);
+//    sidemenuViewController.animationDuration = 0.50;
+//    sidemenuViewController.panGestureEnabled = YES;
+//    sidemenuViewController.scaleBackgroundImageView = YES;
+//    sidemenuViewController.scaleContentView = YES;
+//    sidemenuViewController.scaleMenuView = YES;
+//    sidemenuViewController.menuViewControllerTransformation = CGAffineTransformMakeTranslation(200, 90);
     
     self.window.rootViewController = sidemenuViewController;
     

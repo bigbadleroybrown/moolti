@@ -137,6 +137,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     // Validate grid settings
     if (_startOnGrid) _enableGrid = YES;
     if (_enableGrid) {
@@ -216,7 +217,7 @@
     // Navigation buttons
     if ([self.navigationController.viewControllers objectAtIndex:0] == self) {
         // We're first on stack so show done button
-        _doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil) style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonPressed:)];
+        _doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonPressed:)];
         // Set appearance
         if ([UIBarButtonItem respondsToSelector:@selector(appearance)]) {
             [_doneButton setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
@@ -1479,11 +1480,12 @@
                 [self showGrid:NO];
                 
                 if(self.displaySelectionButtons) {
-                    _gridPreviousLeftNavItem = self.navigationItem.leftBarButtonItem;
+                    //_gridPreviousLeftNavItem = self.navigationItem.leftBarButtonItem;
                     self.navigationItem.leftBarButtonItem = _actionButton;
                 } else {
-                    self.navigationItem.leftBarButtonItem = _gridPreviousLeftNavItem;
-                    _gridPreviousLeftNavItem = nil;
+                    //self.navigationItem.leftBarButtonItem = _gridPreviousLeftNavItem;
+                    //_gridPreviousLeftNavItem = _doneButton;
+                    self.navigationItem.leftBarButtonItem = _doneButton;
                 }
             }
         }

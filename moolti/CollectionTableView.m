@@ -11,10 +11,14 @@
 
 @interface CollectionTableView () <UITableViewDelegate,MWPhotoBrowserDelegate> {
     NSMutableArray *_selections;
+    NSUInteger _currentPageIndex;
 }
+@property (strong, nonatomic) UIActionSheet *actionSheet;
+@property (nonatomic) UIActivityViewController *activityViewController;
 
-@property (nonatomic, strong) NSMutableArray *thumbs;
-@property (nonatomic, strong) NSMutableArray *photos;
+@property (strong, nonatomic) NSMutableArray *thumbs;
+@property (strong, nonatomic) NSMutableArray *photos;
+
 @end
 
 @implementation CollectionTableView
@@ -131,12 +135,6 @@
     NSMutableArray *photos = [[NSMutableArray alloc] init];
     NSMutableArray *thumbs = [[NSMutableArray alloc] init];
     MWPhoto *photo;
-    
-//    BOOL displayActionButton = YES;
-//    BOOL displaySelectionButtons = NO;
-//    BOOL displayNavArrows = NO;
-//    BOOL enableGrid = YES;
-//    BOOL startOnGrid = YES;
     
     switch (indexPath.row) {
         
@@ -273,13 +271,7 @@
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch12" ofType:@"jpg"]]];
             [thumbs addObject:photo];
-            
-            //options
-//            displayActionButton = YES;
-//            displayNavArrows = YES;
-//            enableGrid = YES;
-//            startOnGrid = YES;
-            
+
             break;
             
         case 2: {
@@ -347,11 +339,6 @@
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv15" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             
-//            displayActionButton = YES;
-//            displayNavArrows = YES;
-//            enableGrid = YES;
-//            startOnGrid = YES;
-            
             }
         }
 
@@ -368,10 +355,14 @@
             //browser.alwaysShowControls = YES;
             browser.displaySelectionButtons = NO;
             [browser setCurrentPhotoIndex:1];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
-    nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:nc animated:YES completion:nil];
-    }
+    
+            //modally presenting browser (preferred)
+            UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+            nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+            [self presentViewController:nc animated:YES completion:nil];
+            //pushing photo broswer
+//            [self.navigationController pushViewController:browser animated:YES];
+}
 
 
 #pragma mark - MWPhotoBrowserDelegate
@@ -398,9 +389,21 @@
 //    return [captionView autorelease];
 //}
 
-//- (void)photoBrowser:(MWPhotoBrowser *)photoBrowser actionButtonPressedForPhotoAtIndex:(NSUInteger)index {
-//    NSLog(@"ACTION!");
-//}
+- (void)actionButtonPressed:(id)sender {
+    if (_actionSheet) {
+        [_actionSheet dismissWithClickedButtonIndex:_actionSheet.cancelButtonIndex animated:YES];
+        
+    }else {
+        _selections = [NSMutableArray new];
+        for (int i=0; i <_thumbs.count; i++) {
+            [_selections addObject:[_photos objectAtIndex:_thumbs.count]];
+        }
+        
+        _activityViewController = [[UIActivityViewController alloc]initWithActivityItems:_selections applicationActivities:nil];
+    }
+    
+}
+
 
 - (void)photoBrowser:(MWPhotoBrowser *)photoBrowser didDisplayPhotoAtIndex:(NSUInteger)index {
     NSLog(@"Did start viewing photo at index %lu", (unsigned long)index);
