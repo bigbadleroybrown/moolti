@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A092620CBC2EDC3000B3847"
+               BlueprintIdentifier = "681862A2A0B1103C7D601DB3"
                BuildableName = "libPods-CNPGridMenu.a"
                BlueprintName = "Pods-CNPGridMenu"
                ReferencedContainer = "container:Pods.xcodeproj">

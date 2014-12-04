@@ -55,21 +55,29 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     switch (indexPath.row) {
+       
         case 0:
+        
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[DEMOFirstViewController alloc] init]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
+        
         case 1:
+            
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[inboxInterface alloc] init]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
+        
         case 2:
+            
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[DEMOFirstViewController alloc]init]]         animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
+        
         case 3:
+        
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc]initWithRootViewController:[[CollectionTableView alloc]init]]animated:YES];
             [self.sideMenuViewController hideMenuViewController];
         }

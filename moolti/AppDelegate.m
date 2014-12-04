@@ -12,6 +12,7 @@
 #import "DEMOLeftMenuViewController.h"
 #import "DEMORightMenuViewController.h"
 
+
 @interface AppDelegate ()
 
 @property (nonatomic, strong) UINavigationController *navController;
@@ -25,11 +26,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     [self.window setRootViewController:_navController];
     _navController = [[UINavigationController alloc]initWithRootViewController:[[DEMOFirstViewController alloc]init]];
     DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];
     DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc]init];
-    
     RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
 
     
@@ -49,8 +50,8 @@
 //    sidemenuViewController.scaleMenuView = YES;
 //    sidemenuViewController.menuViewControllerTransformation = CGAffineTransformMakeTranslation(200, 90);
     
-    self.window.rootViewController = sidemenuViewController;
     
+    self.window.rootViewController = sidemenuViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

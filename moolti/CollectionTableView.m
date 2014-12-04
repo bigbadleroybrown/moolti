@@ -8,6 +8,12 @@
 
 #import "CollectionTableView.h"
 #import "CollectionCell.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
+#import "UIImageView+AFNetworking.h"
+
+
+
 
 @interface CollectionTableView () <UITableViewDelegate,MWPhotoBrowserDelegate> {
     NSMutableArray *_selections;
@@ -18,6 +24,11 @@
 
 @property (strong, nonatomic) NSMutableArray *thumbs;
 @property (strong, nonatomic) NSMutableArray *photos;
+@property (strong, nonatomic) NSMutableDictionary *collectionsDictionary;
+@property (strong, nonatomic) NSMutableArray *collectionImageURLs;
+
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+#define ShowHUD(view) [MBProgressHUD showHUDAddedTo:view animated:YES]
 
 @end
 
@@ -27,6 +38,7 @@
     NSArray *thumbnails;
     NSArray *titles;
 }
+
 
 -(id)initWithStyle:(UITableViewStyle)style {
     if (self=[super initWithStyle:style]) {
@@ -40,7 +52,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     
@@ -61,7 +73,9 @@
     
     titles = @[@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg"];
     tableData = @[@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg"];
-   
+
+    [self makeCollectionRequest];
+    
 }
 
 
@@ -83,6 +97,44 @@
     return UIStatusBarAnimationNone;
 }
 
+#pragma mark - Requests
+
+-(void)makeCollectionRequest
+{
+    id hud = ShowHUD(self.view);
+    [hud setLabelText:NSLocalizedString(@"Loading...", nil)];
+    
+    NSURL *url = [NSURL URLWithString:@"https://moolti.herokuapp.com/collections/media"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+        self.collectionsDictionary = [responseObject objectForKey:@"data"];
+        
+        NSMutableDictionary *json = self.collectionsDictionary;
+        //need to make array of thumbs and large images for collectionview population. Current method sucks.
+        
+        NSMutableArray *urlArray = [NSMutableArray new];
+        for (NSMutableDictionary *dict in json)
+        {
+            [urlArray addObject:[dict valueForKey:@"media_url"]];
+        }
+        NSLog(@"%@", urlArray);
+        
+        self.collectionImageURLs = urlArray;
+        
+        [self.tableView reloadData];
+        [hud hide:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Request Failed: %@", error);
+        [hud hide:YES];
+    }];
+    
+    [op start];
+
+}
+
 
 #pragma mark - Table view data source
 
@@ -96,7 +148,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [tableData count];
+    //return [tableData count];
+    //return [self.collectionsArray count];
+    return [self.collectionImageURLs count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,6 +165,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CollectionCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
     //cell labels
     cell.CollectionName.text = [titles objectAtIndex:indexPath.row];
     cell.CollectionSubLabel.text = @"Spring 2015 Ready-to-Wear";
@@ -120,12 +175,26 @@
     //cell image
     cell.CollectionImage.contentMode = UIViewContentModeScaleAspectFit;
     cell.CollectionImage.clipsToBounds = YES;
-    cell.CollectionImage.image = [UIImage imageNamed:[tableData objectAtIndex:indexPath.row]];
-
+    
+        id hud = ShowHUD(cell.CollectionImage);
+    NSURL *url = [NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/thumb/kFunLHXoEMa6zB8lCZJf.jpg"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [cell.CollectionImage setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        cell.CollectionImage.image = image;
+        
+        [hud hide:YES];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        nil;
+        
+        [hud hide:YES];
+    }];
+    
     //general cell settings
     cell.backgroundColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Avenir Light" size:12];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
 }
 
@@ -140,19 +209,22 @@
         
         case 0:
             //photos
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce1" ofType:@"jpg"]]];
+            
+            
+
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/original/kFunLHXoEMa6zB8lCZJf.jpg"]];
             photo.caption = @"Look 1";
             [photos addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce2" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://d2e8drp4ztoqol.cloudfront.net/collections/1/original/6Rune37NJhY4ww8XEwby.jpg"]];
             photo.caption = @"Look 2";
             [photos addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce3" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/original/85IAEMWp0hmpksCbvQKD.jpg"]];
             photo.caption = @"Look 3";
             [photos addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce4" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/original/p5Vcu8FdNJKperV8WJ2w.jpg"]];
             photo.caption = @"Look 4";
             [photos addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce5" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/original/IWvk0UHgSWOoC0lJTlDD.jpg"]];
             photo.caption = @"Look 5";
             [photos addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce6" ofType:@"jpg"]]];
@@ -179,15 +251,15 @@
             photo.caption = @"Look 12";
             [photos addObject:photo];
             //thumbs
-             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce1" ofType:@"jpg"]]];
+             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/thumb/kFunLHXoEMa6zB8lCZJf.jpg"]];
             [thumbs addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce2" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/thumb/f69StMuMQllIDtUpswCs.jpg"]];
             [thumbs addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce3" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/thumb/85IAEMWp0hmpksCbvQKD.jpg"]];
             [thumbs addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo1" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/thumb/p5Vcu8FdNJKperV8WJ2w.jpg"]];
             [thumbs addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce4" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/thumb/IWvk0UHgSWOoC0lJTlDD.jpg"]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce5" ofType:@"jpg"]]];
             [thumbs addObject:photo];

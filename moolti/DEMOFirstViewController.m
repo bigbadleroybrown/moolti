@@ -7,8 +7,9 @@
 //
 
 #import "DEMOFirstViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface DEMOFirstViewController ()
+@interface DEMOFirstViewController () <MFMessageComposeViewControllerDelegate>
 
 @end
 
@@ -32,7 +33,10 @@
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     imageView.image = [UIImage imageNamed:@"photo4"];
     [self.view addSubview:imageView];
+    
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
