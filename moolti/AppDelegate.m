@@ -11,6 +11,7 @@
 #import "DEMOFirstViewController.h"
 #import "DEMOLeftMenuViewController.h"
 #import "DEMORightMenuViewController.h"
+#import "AFNetworkActivityIndicatorManager.h"
 
 
 @interface AppDelegate ()
@@ -27,6 +28,7 @@
     // Override point for customization after application launch.
     //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self.window setRootViewController:_navController];
     _navController = [[UINavigationController alloc]initWithRootViewController:[[DEMOFirstViewController alloc]init]];
     DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];

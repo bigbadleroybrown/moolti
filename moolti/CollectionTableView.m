@@ -10,10 +10,9 @@
 #import "CollectionCell.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
-#import "UIImageView+AFNetworking.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-
-
+static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
 @interface CollectionTableView () <UITableViewDelegate,MWPhotoBrowserDelegate> {
     NSMutableArray *_selections;
@@ -44,38 +43,29 @@
     if (self=[super initWithStyle:style]) {
         self.title = @"Collections";
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-    }
+        }
     
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 //    [self.tableView reloadData];
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
-    
     self.view.backgroundColor = [UIColor blackColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     self.tableView.separatorColor =[UIColor clearColor];
-    
-//    self.tableView.estimatedRowHeight = 78.0;
+    //    self.tableView.estimatedRowHeight = 78.0;
 //    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = NO;
-    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    titles = @[@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg"];
-    tableData = @[@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg"];
-
+    titles = @[@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg", @"Chloe",@"Celine"];
+    tableData = @[@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg",@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ch1.jpg",@"ce1.jpg"];
     [self makeCollectionRequest];
-    
 }
 
 
@@ -101,40 +91,27 @@
 
 -(void)makeCollectionRequest
 {
-    id hud = ShowHUD(self.view);
-    [hud setLabelText:NSLocalizedString(@"Loading...", nil)];
-    
-    NSURL *url = [NSURL URLWithString:@"https://moolti.herokuapp.com/collections/media"];
+    NSString *urlString = [NSString stringWithFormat:@"%@/collections/media", BaseURLString];
+    NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     op.responseSerializer = [AFJSONResponseSerializer serializer];
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-    
-        self.collectionsDictionary = [responseObject objectForKey:@"data"];
-        
+    self.collectionsDictionary = [responseObject objectForKey:@"data"];
         NSMutableDictionary *json = self.collectionsDictionary;
         //need to make array of thumbs and large images for collectionview population. Current method sucks.
-        
         NSMutableArray *urlArray = [NSMutableArray new];
         for (NSMutableDictionary *dict in json)
         {
-            [urlArray addObject:[dict valueForKey:@"media_url"]];
+            [urlArray addObject:[dict valueForKey:@"thumb_url"]];
         }
-        NSLog(@"%@", urlArray);
-        
         self.collectionImageURLs = urlArray;
-        
         [self.tableView reloadData];
-        [hud hide:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Request Failed: %@", error);
-        [hud hide:YES];
     }];
-    
     [op start];
-
 }
-
 
 #pragma mark - Table view data source
 
@@ -147,10 +124,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    //return [tableData count];
-    //return [self.collectionsArray count];
-    return [self.collectionImageURLs count];
+
+        return [self.collectionImageURLs count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -172,29 +147,18 @@
     cell.CollectionName.textColor = [UIColor whiteColor];
     cell.CollectionSubLabel.textColor = [UIColor whiteColor];
     
-    //cell image
-    cell.CollectionImage.contentMode = UIViewContentModeScaleAspectFit;
-    cell.CollectionImage.clipsToBounds = YES;
-    
-        id hud = ShowHUD(cell.CollectionImage);
-    NSURL *url = [NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/thumb/kFunLHXoEMa6zB8lCZJf.jpg"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [cell.CollectionImage setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        cell.CollectionImage.image = image;
-        
-        [hud hide:YES];
-        
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-        nil;
-        
-        [hud hide:YES];
-    }];
-    
     //general cell settings
     cell.backgroundColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Avenir Light" size:12];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    
+    //cell image
+    cell.CollectionImage.contentMode = UIViewContentModeScaleAspectFit;
+    cell.CollectionImage.clipsToBounds = YES;
+    [cell.CollectionImage sd_setImageWithURL:[self.collectionImageURLs objectAtIndex:indexPath.row]];
+    NSLog(@"%@", [self.collectionImageURLs objectAtIndex:indexPath.row]);
+    
+    
     return cell;
 }
 
@@ -209,9 +173,6 @@
         
         case 0:
             //photos
-            
-            
-
             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/original/kFunLHXoEMa6zB8lCZJf.jpg"]];
             photo.caption = @"Look 1";
             [photos addObject:photo];
