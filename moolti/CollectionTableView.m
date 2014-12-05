@@ -50,19 +50,15 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.tableView reloadData];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     self.view.backgroundColor = [UIColor blackColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     self.tableView.separatorColor =[UIColor clearColor];
-    //    self.tableView.estimatedRowHeight = 78.0;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = NO;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     titles = @[@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg", @"Chloe",@"Celine"];
     tableData = @[@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg",@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ch1.jpg",@"ce1.jpg"];
     [self makeCollectionRequest];
@@ -155,10 +151,13 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
     //cell image
     cell.CollectionImage.contentMode = UIViewContentModeScaleAspectFit;
     cell.CollectionImage.clipsToBounds = YES;
-    [cell.CollectionImage sd_setImageWithURL:[self.collectionImageURLs objectAtIndex:indexPath.row]];
-    NSLog(@"%@", [self.collectionImageURLs objectAtIndex:indexPath.row]);
-    
-    
+
+    NSMutableArray *appendedURLArray = [[NSMutableArray alloc]init];
+    for (NSString *imgURL in self.collectionImageURLs)
+    {
+        [appendedURLArray addObject:[NSString stringWithFormat:@"http://%@", imgURL]];
+    }
+    [cell.CollectionImage sd_setImageWithURL:[appendedURLArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -173,6 +172,7 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
         
         case 0:
             //photos
+            
             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/original/kFunLHXoEMa6zB8lCZJf.jpg"]];
             photo.caption = @"Look 1";
             [photos addObject:photo];
@@ -211,7 +211,9 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ce12" ofType:@"jpg"]]];
             photo.caption = @"Look 12";
             [photos addObject:photo];
+            
             //thumbs
+            
              photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/thumb/kFunLHXoEMa6zB8lCZJf.jpg"]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://cdn.runofshow.com/collections/1/thumb/f69StMuMQllIDtUpswCs.jpg"]];
@@ -280,6 +282,7 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
             [photos addObject:photo];
             
             //thumbs
+            
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch1" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ch2" ofType:@"jpg"]]];
@@ -341,6 +344,7 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
             [photos addObject:photo];
             
             //thumbs
+            
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv1" ofType:@"jpg"]]];
             [thumbs addObject:photo];
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dv2" ofType:@"jpg"]]];
@@ -377,6 +381,7 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
     }
             //photo brower settings
+    
             self.photos = photos;
             self.thumbs = thumbs;
             MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
@@ -385,17 +390,12 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
             browser.enableGrid = YES;
             browser.startOnGrid = YES;
             browser.displayActionButton = YES;
-            //browser.alwaysShowControls = YES;
             browser.displaySelectionButtons = NO;
             [browser setCurrentPhotoIndex:1];
-    
-            //modally presenting browser (preferred)
             UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
             nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
             [self presentViewController:nc animated:YES completion:nil];
-            //pushing photo broswer
-//            [self.navigationController pushViewController:browser animated:YES];
-}
+    }
 
 
 #pragma mark - MWPhotoBrowserDelegate
@@ -436,7 +436,6 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
     }
     
 }
-
 
 - (void)photoBrowser:(MWPhotoBrowser *)photoBrowser didDisplayPhotoAtIndex:(NSUInteger)index {
     NSLog(@"Did start viewing photo at index %lu", (unsigned long)index);
