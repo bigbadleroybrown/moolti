@@ -87,6 +87,7 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
 -(void)makeCollectionRequest
 {
+
     NSString *urlString = [NSString stringWithFormat:@"%@/collections/media", BaseURLString];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -151,13 +152,15 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
     //cell image
     cell.CollectionImage.contentMode = UIViewContentModeScaleAspectFit;
     cell.CollectionImage.clipsToBounds = YES;
-
+//    id hud = ShowHUD(self.view);
+  //  [hud setLabelText:NSLocalizedString(@"Downloading Collections", nil)];
     NSMutableArray *appendedURLArray = [[NSMutableArray alloc]init];
     for (NSString *imgURL in self.collectionImageURLs)
     {
         [appendedURLArray addObject:[NSString stringWithFormat:@"http://%@", imgURL]];
     }
     [cell.CollectionImage sd_setImageWithURL:[appendedURLArray objectAtIndex:indexPath.row]];
+    //[hud hide:YES];
     return cell;
 }
 

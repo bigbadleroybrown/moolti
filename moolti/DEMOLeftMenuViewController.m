@@ -13,6 +13,8 @@
 #import "GalleryVC.h"
 #import "MWPhotoBrowser.h"
 #import "CollectionTableView.h"
+#import "SMSViewController.h"
+
 
 
 
@@ -74,7 +76,7 @@
         
         case 2:
             
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[DEMOFirstViewController alloc]init]]         animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[SMSViewController alloc]init]]         animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
         

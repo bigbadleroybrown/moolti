@@ -61,6 +61,8 @@
 		2E1D54CC1A1EA58300D304D1 /* ce2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54CB1A1EA58300D304D1 /* ce2.jpg */; };
 		2E1D54CE1A1EA6AA00D304D1 /* photo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54CD1A1EA6AA00D304D1 /* photo2.jpg */; };
 		2E1D54D11A1F9B4700D304D1 /* photo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54D01A1F9B4700D304D1 /* photo1.jpg */; };
+		2E87570B1A35FB7B00A7C937 /* SMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E87570A1A35FB7B00A7C937 /* SMSViewController.m */; };
+		2E87570E1A35FD8E00A7C937 /* SMSDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E87570D1A35FD8E00A7C937 /* SMSDataModel.m */; };
 		2E94073D1A1A8C6A0099F37C /* inboxInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */; };
 		2E9407401A1A8CE90099F37C /* inboxInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E94073F1A1A8CE90099F37C /* inboxInterface.m */; };
 		2E9407431A1A8D6A0099F37C /* inboxInterfaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9407421A1A8D6A0099F37C /* inboxInterfaceCell.m */; };
@@ -121,7 +123,7 @@
 		2E1D53E71A1BEBE500D304D1 /* GalleryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryVC.m; sourceTree = "<group>"; };
 		2E1D53EA1A1D0F8D00D304D1 /* CollectionTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionTableView.h; sourceTree = "<group>"; };
 		2E1D53EB1A1D0F8D00D304D1 /* CollectionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionTableView.m; sourceTree = "<group>"; };
-		2E1D53ED1A1D613400D304D1 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		2E1D53ED1A1D613400D304D1 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionCell.xib; path = moolti/CollectionCell.xib; sourceTree = "<group>"; };
 		2E1D53EF1A1D617D00D304D1 /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		2E1D53F01A1D617D00D304D1 /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		2E1D54691A1E689900D304D1 /* ce1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ce1.jpg; sourceTree = "<group>"; };
@@ -173,6 +175,10 @@
 		2E1D54CB1A1EA58300D304D1 /* ce2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ce2.jpg; sourceTree = "<group>"; };
 		2E1D54CD1A1EA6AA00D304D1 /* photo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo2.jpg; sourceTree = "<group>"; };
 		2E1D54D01A1F9B4700D304D1 /* photo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo1.jpg; sourceTree = "<group>"; };
+		2E8757091A35FB7B00A7C937 /* SMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSViewController.h; sourceTree = "<group>"; };
+		2E87570A1A35FB7B00A7C937 /* SMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSViewController.m; sourceTree = "<group>"; };
+		2E87570C1A35FD8E00A7C937 /* SMSDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSDataModel.h; sourceTree = "<group>"; };
+		2E87570D1A35FD8E00A7C937 /* SMSDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSDataModel.m; sourceTree = "<group>"; };
 		2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = inboxInterface.storyboard; sourceTree = "<group>"; };
 		2E94073E1A1A8CE90099F37C /* inboxInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inboxInterface.h; sourceTree = "<group>"; };
 		2E94073F1A1A8CE90099F37C /* inboxInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inboxInterface.m; sourceTree = "<group>"; };
@@ -207,7 +213,7 @@
 		2EA0A12F1A1B08D600DBFB81 /* jobs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jobs.jpg; sourceTree = "<group>"; };
 		2EA0A1301A1B08D600DBFB81 /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lion.jpg; sourceTree = "<group>"; };
 		2EA0A1311A1B08D600DBFB81 /* lion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lion.mp4; sourceTree = "<group>"; };
-		2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessagingVC.storyboard; sourceTree = "<group>"; };
+		2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MessagingVC.storyboard; path = moolti/MessagingVC.storyboard; sourceTree = "<group>"; };
 		2ECE5E781A159DA0000F78BD /* moolti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moolti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ECE5E7C1A159DA0000F78BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ECE5E7D1A159DA0000F78BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -256,7 +262,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2E1D53E21A1BC42A00D304D1 /* Views */ = {
+		2E1D53E21A1BC42A00D304D1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				2E9407461A1A92240099F37C /* DEMOFirstViewController.h */,
@@ -267,8 +273,10 @@
 				2E1D53EB1A1D0F8D00D304D1 /* CollectionTableView.m */,
 				2E1D53DE1A1BA1DD00D304D1 /* DEMORightMenuViewController.h */,
 				2E1D53DF1A1BA1DD00D304D1 /* DEMORightMenuViewController.m */,
+				2E8757091A35FB7B00A7C937 /* SMSViewController.h */,
+				2E87570A1A35FB7B00A7C937 /* SMSViewController.m */,
 			);
-			name = Views;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		2E1D54681A1E689900D304D1 /* mooltiMedia */ = {
@@ -326,6 +334,17 @@
 				2E1D54971A1E689900D304D1 /* dv9.jpg */,
 			);
 			path = mooltiMedia;
+			sourceTree = "<group>";
+		};
+		2E8757081A35F52B00A7C937 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2ECE5E881A159DA0000F78BD /* Main.storyboard */,
+				2E1D53ED1A1D613400D304D1 /* CollectionCell.xib */,
+				2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */,
+			);
+			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		2E94074C1A1A9A700099F37C /* images */ = {
@@ -397,16 +416,16 @@
 			isa = PBXGroup;
 			children = (
 				2E1D54681A1E689900D304D1 /* mooltiMedia */,
-				2E1D53E21A1BC42A00D304D1 /* Views */,
+				2E8757081A35F52B00A7C937 /* Views */,
+				2E1D53E21A1BC42A00D304D1 /* View Controllers */,
+				2E87570C1A35FD8E00A7C937 /* SMSDataModel.h */,
+				2E87570D1A35FD8E00A7C937 /* SMSDataModel.m */,
 				2ECE5E7F1A159DA0000F78BD /* AppDelegate.h */,
 				2ECE5E801A159DA0000F78BD /* AppDelegate.m */,
 				2E1D53E61A1BEBE500D304D1 /* GalleryVC.h */,
 				2E1D53E71A1BEBE500D304D1 /* GalleryVC.m */,
-				2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */,
-				2E1D53ED1A1D613400D304D1 /* CollectionCell.xib */,
 				2E1D53EF1A1D617D00D304D1 /* CollectionCell.h */,
 				2E1D53F01A1D617D00D304D1 /* CollectionCell.m */,
-				2ECE5E881A159DA0000F78BD /* Main.storyboard */,
 				2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */,
 				2E9407411A1A8D6A0099F37C /* inboxInterfaceCell.h */,
 				2E9407421A1A8D6A0099F37C /* inboxInterfaceCell.m */,
@@ -676,8 +695,10 @@
 				2E1D53E01A1BA1DD00D304D1 /* DEMORightMenuViewController.m in Sources */,
 				2E9407401A1A8CE90099F37C /* inboxInterface.m in Sources */,
 				2ECE5E841A159DA0000F78BD /* moolti.xcdatamodeld in Sources */,
+				2E87570B1A35FB7B00A7C937 /* SMSViewController.m in Sources */,
 				2E1D53E81A1BEBE500D304D1 /* GalleryVC.m in Sources */,
 				2E1D53F11A1D617D00D304D1 /* CollectionCell.m in Sources */,
+				2E87570E1A35FD8E00A7C937 /* SMSDataModel.m in Sources */,
 				2E1D53EC1A1D0F8D00D304D1 /* CollectionTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -707,6 +728,7 @@
 				2ECE5E891A159DA0000F78BD /* Base */,
 			);
 			name = Main.storyboard;
+			path = moolti;
 			sourceTree = "<group>";
 		};
 		2ECE5E8D1A159DA0000F78BD /* LaunchScreen.xib */ = {

@@ -11,6 +11,7 @@
 #import "DEMOFirstViewController.h"
 #import "DEMOLeftMenuViewController.h"
 #import "DEMORightMenuViewController.h"
+#import "SMSViewController.h"
 #import "AFNetworkActivityIndicatorManager.h"
 
 
