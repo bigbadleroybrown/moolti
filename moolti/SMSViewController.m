@@ -16,7 +16,7 @@
     
     [super viewDidLoad];
     
-    self.title = @"Moolti Messaging";
+    self.title = @"Moolti Messenger";
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
     

@@ -11,6 +11,9 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "RACAFNetworking.h"
+
+
 
 static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
@@ -62,9 +65,8 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
     titles = @[@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg", @"Chloe",@"Celine"];
     tableData = @[@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg",@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ch1.jpg",@"ce1.jpg"];
     [self makeCollectionRequest];
+    [self.tableView reloadData];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -87,7 +89,6 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
 -(void)makeCollectionRequest
 {
-
     NSString *urlString = [NSString stringWithFormat:@"%@/collections/media", BaseURLString];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -152,15 +153,15 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
     //cell image
     cell.CollectionImage.contentMode = UIViewContentModeScaleAspectFit;
     cell.CollectionImage.clipsToBounds = YES;
-//    id hud = ShowHUD(self.view);
-  //  [hud setLabelText:NSLocalizedString(@"Downloading Collections", nil)];
+    id hud = ShowHUD(cell.CollectionImage);
+    [hud setLabelText:NSLocalizedString(@"Updating Collections", nil)];
     NSMutableArray *appendedURLArray = [[NSMutableArray alloc]init];
     for (NSString *imgURL in self.collectionImageURLs)
     {
         [appendedURLArray addObject:[NSString stringWithFormat:@"http://%@", imgURL]];
     }
     [cell.CollectionImage sd_setImageWithURL:[appendedURLArray objectAtIndex:indexPath.row]];
-    //[hud hide:YES];
+    [hud hide:YES];
     return cell;
 }
 

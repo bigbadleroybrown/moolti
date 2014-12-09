@@ -14,21 +14,18 @@
 #import "SMSViewController.h"
 #import "AFNetworkActivityIndicatorManager.h"
 
-
 @interface AppDelegate ()
 
 @property (nonatomic, strong) UINavigationController *navController;
-
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self.window setRootViewController:_navController];
     _navController = [[UINavigationController alloc]initWithRootViewController:[[DEMOFirstViewController alloc]init]];
@@ -37,7 +34,6 @@
     RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
 
     //general menu settings
-    
     sidemenuViewController.backgroundImage = [UIImage imageNamed:@"homebackground"];
     sidemenuViewController.menuPreferredStatusBarStyle = 1;
     sidemenuViewController.delegate = self;
@@ -46,13 +42,6 @@
     sidemenuViewController.contentViewShadowOpacity = 0.6;
     sidemenuViewController.contentViewShadowRadius = 12;
     sidemenuViewController.contentViewShadowEnabled = YES;
-//    sidemenuViewController.animationDuration = 0.50;
-//    sidemenuViewController.panGestureEnabled = YES;
-//    sidemenuViewController.scaleBackgroundImageView = YES;
-//    sidemenuViewController.scaleContentView = YES;
-//    sidemenuViewController.scaleMenuView = YES;
-//    sidemenuViewController.menuViewControllerTransformation = CGAffineTransformMakeTranslation(200, 90);
-    
     
     self.window.rootViewController = sidemenuViewController;
     self.window.backgroundColor = [UIColor whiteColor];
@@ -60,7 +49,9 @@
     return YES;
 }
 
+
 - (void)applicationWillResignActive:(UIApplication *)application {
+    
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }

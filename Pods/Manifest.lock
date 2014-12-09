@@ -6,6 +6,9 @@ PODS:
     - AFNetworking/Security (= 2.5.0)
     - AFNetworking/Serialization (= 2.5.0)
     - AFNetworking/UIKit (= 2.5.0)
+  - AFNetworking-RACExtensions (0.1.3):
+    - AFNetworking (~> 2.0)
+    - ReactiveCocoa (~> 2.0)
   - AFNetworking/NSURLConnection (2.5.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -37,6 +40,7 @@ PODS:
     - FontAwesomeKit/Core
   - FontAwesomeKit/Zocial (2.1.8):
     - FontAwesomeKit/Core
+  - JBKenBurnsView (1.0)
   - JSQMessagesViewController (6.1.0):
     - JSQSystemSoundPlayer (~> 2.0.0)
   - JSQSystemSoundPlayer (2.0.0)
@@ -47,6 +51,13 @@ PODS:
     - PSTCollectionView (~> 1.2)
     - SDWebImage (~> 3.7)
   - PSTCollectionView (1.2.3)
+  - ReactiveCocoa (2.3.1):
+    - ReactiveCocoa/UI (= 2.3.1)
+  - ReactiveCocoa/Core (2.3.1):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.3.1)
+  - ReactiveCocoa/UI (2.3.1):
+    - ReactiveCocoa/Core
   - RESideMenu (4.0.7)
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
@@ -54,22 +65,36 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - AFNetworking-RACExtensions (from `https://github.com/knshiro/AFNetworking-RACExtensions.git`)
   - CNPGridMenu
   - FontAwesomeKit (~> 2.1.0)
+  - JBKenBurnsView
   - JSQMessagesViewController
   - MWPhotoBrowser
   - RESideMenu (~> 4.0.7)
 
+EXTERNAL SOURCES:
+  AFNetworking-RACExtensions:
+    :git: https://github.com/knshiro/AFNetworking-RACExtensions.git
+
+CHECKOUT OPTIONS:
+  AFNetworking-RACExtensions:
+    :commit: d4c6097d3f22be212c66339f850b1be180162747
+    :git: https://github.com/knshiro/AFNetworking-RACExtensions.git
+
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  AFNetworking-RACExtensions: 4f7633edc5618e771f1c034ec3eb6974fe9eb441
   CNPGridMenu: 0a8f8303cc0e141ad483d8b9bc8fdf48bfa577b6
   DACircularProgress: 3b41941891a56dc6aa17971f5322a9a38a6f446e
   FontAwesomeKit: a2edea3111dab107b4cc43b85881b404eb063385
+  JBKenBurnsView: fff26eaeb0d11a595a371427b0c0b37fe9a7ceeb
   JSQMessagesViewController: 8998c086bf6db5d6190376041903d5be2961f03f
   JSQSystemSoundPlayer: c98443b1cbb3b45db09d0d3d6c2355cf78294981
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   MWPhotoBrowser: be05b3b7521e961382a4ba5579685bf5a00b93d8
   PSTCollectionView: d9f466e4554cc83260ca9bde7beb27f308e8fd76
+  ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
   RESideMenu: a9c1cd2e64e60e1d3166ddac01a83e215a0e4d30
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
 
