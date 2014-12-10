@@ -64,6 +64,8 @@
 		2E5BFD5E1A3898EF00D17971 /* ContactPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BFD5D1A3898EF00D17971 /* ContactPickerViewController.m */; };
 		2E5BFD611A38999500D17971 /* ContactPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BFD601A38999500D17971 /* ContactPickerTableViewCell.m */; };
 		2E5BFD641A389CB900D17971 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BFD631A389CB900D17971 /* Contact.m */; };
+		2E5BFD661A38BA2D00D17971 /* ContactPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD651A38BA2D00D17971 /* ContactPickerViewController.xib */; };
+		2E5BFD6A1A38BAE700D17971 /* ContactPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD691A38BAE700D17971 /* ContactPickerTableViewCell.xib */; };
 		2E87570B1A35FB7B00A7C937 /* SMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E87570A1A35FB7B00A7C937 /* SMSViewController.m */; };
 		2E87570E1A35FD8E00A7C937 /* SMSDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E87570D1A35FD8E00A7C937 /* SMSDataModel.m */; };
 		2E94073D1A1A8C6A0099F37C /* inboxInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */; };
@@ -191,6 +193,8 @@
 		2E5BFD601A38999500D17971 /* ContactPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPickerTableViewCell.m; sourceTree = "<group>"; };
 		2E5BFD621A389CB900D17971 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		2E5BFD631A389CB900D17971 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		2E5BFD651A38BA2D00D17971 /* ContactPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactPickerViewController.xib; sourceTree = "<group>"; };
+		2E5BFD691A38BAE700D17971 /* ContactPickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactPickerTableViewCell.xib; sourceTree = "<group>"; };
 		2E8757091A35FB7B00A7C937 /* SMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSViewController.h; sourceTree = "<group>"; };
 		2E87570A1A35FB7B00A7C937 /* SMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSViewController.m; sourceTree = "<group>"; };
 		2E87570C1A35FD8E00A7C937 /* SMSDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSDataModel.h; sourceTree = "<group>"; };
@@ -376,6 +380,8 @@
 				2ECE5E881A159DA0000F78BD /* Main.storyboard */,
 				2E1D53ED1A1D613400D304D1 /* CollectionCell.xib */,
 				2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */,
+				2E5BFD651A38BA2D00D17971 /* ContactPickerViewController.xib */,
+				2E5BFD691A38BAE700D17971 /* ContactPickerTableViewCell.xib */,
 			);
 			name = Views;
 			path = ..;
@@ -634,9 +640,11 @@
 				2E94075B1A1A9A700099F37C /* camera-photo-tips.html in Resources */,
 				2E94075A1A1A9A700099F37C /* 10 Great iPhone Tips.pdf in Resources */,
 				2EA0A1361A1B08D600DBFB81 /* bubble_rect_sending.png in Resources */,
+				2E5BFD6A1A38BAE700D17971 /* ContactPickerTableViewCell.xib in Resources */,
 				2ECE5E8A1A159DA0000F78BD /* Main.storyboard in Resources */,
 				2EF533EB1A1FCC3300F5FCCF /* house.jpg in Resources */,
 				2E1D54B81A1E689900D304D1 /* dv1.jpg in Resources */,
+				2E5BFD661A38BA2D00D17971 /* ContactPickerViewController.xib in Resources */,
 				2E1D54B61A1E689900D304D1 /* ch8.jpg in Resources */,
 				2E1D54AC1A1E689900D304D1 /* ch1.jpg in Resources */,
 				2E1D54981A1E689900D304D1 /* ce1.jpg in Resources */,
