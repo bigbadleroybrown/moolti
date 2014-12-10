@@ -18,17 +18,26 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" tag="103" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6i-UB-Bej"/>
+                    <imageView userInteractionEnabled="NO" tag="103" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-avatar-60x60" translatesAutoresizingMaskIntoConstraints="NO" id="i6i-UB-Bej">
+                        <rect key="frame" x="46" y="14" width="40" height="40"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+962-797722334" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joe-I5-v8w">
                         <rect key="frame" x="94" y="35" width="132" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" tag="104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUe-fc-iBo"/>
+                    <imageView userInteractionEnabled="NO" tag="104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-checkbox-unselected-25x25" highlightedImage="icon-checkbox-selected-green-25x25-1" translatesAutoresizingMaskIntoConstraints="NO" id="dUe-fc-iBo">
+                        <rect key="frame" x="11" y="21" width="25" height="25"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <point key="canvasLocation" x="890" y="456.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon-avatar-60x60" width="60" height="60"/>
+        <image name="icon-checkbox-selected-green-25x25-1" width="25" height="25"/>
+        <image name="icon-checkbox-unselected-25x25" width="25" height="25"/>
+    </resources>
 </document>

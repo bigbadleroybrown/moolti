@@ -42,7 +42,7 @@
         self.color = color;
         self.selectedColor = selectedColor;
         
-        //self setupView];
+        [self setUpView];
     }
         return self;
 }
@@ -96,6 +96,14 @@
     self.label.font = font;
     
     [self adjustSize];
+}
+
+-(void)select
+{
+    if ([self.delegate respondsToSelector:@selector(contactBubbleWasSelected:)]) {
+        [self.delegate contactBubbleWasSelected:self];
+    }
+    
 }
 
 -(void)unSelect
