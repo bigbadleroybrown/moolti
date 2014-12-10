@@ -14,6 +14,7 @@
 #import "MWPhotoBrowser.h"
 #import "CollectionTableView.h"
 #import "SMSViewController.h"
+#import "ContactPickerViewController.h"
 
 
 
@@ -63,7 +64,7 @@
        
         case 0:
         
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[DEMOFirstViewController alloc] init]]
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ContactPickerViewController alloc] init]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
