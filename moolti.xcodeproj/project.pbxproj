@@ -94,6 +94,13 @@
 		2EA0A13A1A1B08D600DBFB81 /* lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0A1301A1B08D600DBFB81 /* lion.jpg */; };
 		2EA0A13B1A1B08D600DBFB81 /* lion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0A1311A1B08D600DBFB81 /* lion.mp4 */; };
 		2EA0A1401A1B0D1800DBFB81 /* MessagingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */; };
+		2EB719321A37ABD200ED3E01 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB719311A37ABD200ED3E01 /* QuartzCore.framework */; };
+		2EB719351A37ABEA00ED3E01 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB719331A37ABEA00ED3E01 /* AddressBook.framework */; };
+		2EB719361A37ABEA00ED3E01 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB719341A37ABEA00ED3E01 /* AddressBookUI.framework */; };
+		2EB719381A37ABF700ED3E01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB719371A37ABF700ED3E01 /* CoreGraphics.framework */; };
+		2EB7193C1A37AF3300ED3E01 /* ContactBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7193B1A37AF3300ED3E01 /* ContactBubble.m */; };
+		2EB7193F1A37B12000ED3E01 /* BubbleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7193E1A37B12000ED3E01 /* BubbleColor.m */; };
+		2EB719421A37B8AE00ED3E01 /* ContactPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB719411A37B8AE00ED3E01 /* ContactPickerView.m */; };
 		2ECE5E7E1A159DA0000F78BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E7D1A159DA0000F78BD /* main.m */; };
 		2ECE5E811A159DA0000F78BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E801A159DA0000F78BD /* AppDelegate.m */; };
 		2ECE5E841A159DA0000F78BD /* moolti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E821A159DA0000F78BD /* moolti.xcdatamodeld */; };
@@ -214,6 +221,16 @@
 		2EA0A1301A1B08D600DBFB81 /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lion.jpg; sourceTree = "<group>"; };
 		2EA0A1311A1B08D600DBFB81 /* lion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lion.mp4; sourceTree = "<group>"; };
 		2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MessagingVC.storyboard; path = moolti/MessagingVC.storyboard; sourceTree = "<group>"; };
+		2EB719311A37ABD200ED3E01 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2EB719331A37ABEA00ED3E01 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		2EB719341A37ABEA00ED3E01 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		2EB719371A37ABF700ED3E01 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2EB7193A1A37AF3300ED3E01 /* ContactBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactBubble.h; sourceTree = "<group>"; };
+		2EB7193B1A37AF3300ED3E01 /* ContactBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactBubble.m; sourceTree = "<group>"; };
+		2EB7193D1A37B12000ED3E01 /* BubbleColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleColor.h; sourceTree = "<group>"; };
+		2EB7193E1A37B12000ED3E01 /* BubbleColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleColor.m; sourceTree = "<group>"; };
+		2EB719401A37B8AE00ED3E01 /* ContactPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPickerView.h; sourceTree = "<group>"; };
+		2EB719411A37B8AE00ED3E01 /* ContactPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPickerView.m; sourceTree = "<group>"; };
 		2ECE5E781A159DA0000F78BD /* moolti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moolti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ECE5E7C1A159DA0000F78BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ECE5E7D1A159DA0000F78BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -236,6 +253,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EB719381A37ABF700ED3E01 /* CoreGraphics.framework in Frameworks */,
+				2EB719351A37ABEA00ED3E01 /* AddressBook.framework in Frameworks */,
+				2EB719361A37ABEA00ED3E01 /* AddressBookUI.framework in Frameworks */,
+				2EB719321A37ABD200ED3E01 /* QuartzCore.framework in Frameworks */,
 				2EA0A0D71A1AF8E800DBFB81 /* MediaPlayer.framework in Frameworks */,
 				2E9407451A1A8EC00099F37C /* MessageUI.framework in Frameworks */,
 				B851C17534C803B06B8A2619 /* libPods.a in Frameworks */,
@@ -255,6 +276,10 @@
 		10DEA02D2E200AD1FA1C3B2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EB719371A37ABF700ED3E01 /* CoreGraphics.framework */,
+				2EB719331A37ABEA00ED3E01 /* AddressBook.framework */,
+				2EB719341A37ABEA00ED3E01 /* AddressBookUI.framework */,
+				2EB719311A37ABD200ED3E01 /* QuartzCore.framework */,
 				2EA0A0D61A1AF8E800DBFB81 /* MediaPlayer.framework */,
 				2E9407441A1A8EC00099F37C /* MessageUI.framework */,
 				2664498DEC717EFBC1ED5361 /* libPods.a */,
@@ -392,6 +417,19 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		2EB719391A37AF1300ED3E01 /* contacts */ = {
+			isa = PBXGroup;
+			children = (
+				2EB7193A1A37AF3300ED3E01 /* ContactBubble.h */,
+				2EB7193B1A37AF3300ED3E01 /* ContactBubble.m */,
+				2EB7193D1A37B12000ED3E01 /* BubbleColor.h */,
+				2EB7193E1A37B12000ED3E01 /* BubbleColor.m */,
+				2EB719401A37B8AE00ED3E01 /* ContactPickerView.h */,
+				2EB719411A37B8AE00ED3E01 /* ContactPickerView.m */,
+			);
+			name = contacts;
+			sourceTree = "<group>";
+		};
 		2ECE5E6F1A159DA0000F78BD = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +453,7 @@
 		2ECE5E7A1A159DA0000F78BD /* moolti */ = {
 			isa = PBXGroup;
 			children = (
+				2EB719391A37AF1300ED3E01 /* contacts */,
 				2E1D54681A1E689900D304D1 /* mooltiMedia */,
 				2E8757081A35F52B00A7C937 /* Views */,
 				2E1D53E21A1BC42A00D304D1 /* View Controllers */,
@@ -689,6 +728,8 @@
 			files = (
 				2E94074B1A1A92300099F37C /* DEMOLeftMenuViewController.m in Sources */,
 				2E9407481A1A92240099F37C /* DEMOFirstViewController.m in Sources */,
+				2EB7193C1A37AF3300ED3E01 /* ContactBubble.m in Sources */,
+				2EB719421A37B8AE00ED3E01 /* ContactPickerView.m in Sources */,
 				2ECE5E811A159DA0000F78BD /* AppDelegate.m in Sources */,
 				2E9407431A1A8D6A0099F37C /* inboxInterfaceCell.m in Sources */,
 				2ECE5E7E1A159DA0000F78BD /* main.m in Sources */,
@@ -700,6 +741,7 @@
 				2E1D53F11A1D617D00D304D1 /* CollectionCell.m in Sources */,
 				2E87570E1A35FD8E00A7C937 /* SMSDataModel.m in Sources */,
 				2E1D53EC1A1D0F8D00D304D1 /* CollectionTableView.m in Sources */,
+				2EB7193F1A37B12000ED3E01 /* BubbleColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

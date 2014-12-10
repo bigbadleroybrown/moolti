@@ -29,6 +29,7 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 @property (strong, nonatomic) NSMutableDictionary *collectionsDictionary;
 @property (strong, nonatomic) NSMutableArray *collectionImageURLs;
 
+
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 #define ShowHUD(view) [MBProgressHUD showHUDAddedTo:view animated:YES]
 
