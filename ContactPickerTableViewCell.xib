@@ -27,7 +27,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" tag="104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-checkbox-unselected-25x25" highlightedImage="icon-checkbox-selected-green-25x25-1" translatesAutoresizingMaskIntoConstraints="NO" id="dUe-fc-iBo">
+                    <imageView userInteractionEnabled="NO" tag="104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-checkbox-unselected-25x25" highlightedImage="icon-checkbox-selected-green-25x25" translatesAutoresizingMaskIntoConstraints="NO" id="dUe-fc-iBo">
                         <rect key="frame" x="11" y="21" width="25" height="25"/>
                     </imageView>
                 </subviews>
@@ -37,7 +37,7 @@
     </objects>
     <resources>
         <image name="icon-avatar-60x60" width="60" height="60"/>
-        <image name="icon-checkbox-selected-green-25x25-1" width="25" height="25"/>
+        <image name="icon-checkbox-selected-green-25x25" width="25" height="25"/>
         <image name="icon-checkbox-unselected-25x25" width="25" height="25"/>
     </resources>
 </document>

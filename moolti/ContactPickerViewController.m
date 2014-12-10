@@ -41,6 +41,8 @@ UIBarButtonItem *barButton;
     barButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(done:)];
     barButton.enabled = FALSE;
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
+    
     self.navigationItem.rightBarButtonItem = barButton;
     
     self.contactPickerView = [[ContactPickerView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
