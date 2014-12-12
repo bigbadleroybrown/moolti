@@ -39,6 +39,10 @@
     
     [self.tableView registerClass:[inboxInterfaceCell class] forCellReuseIdentifier:@"Cell"];
     
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

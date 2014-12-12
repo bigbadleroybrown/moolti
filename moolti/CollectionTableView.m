@@ -12,12 +12,13 @@
 #import "MBProgressHUD.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "RACAFNetworking.h"
+#import "MONActivityIndicatorView.h"
 
 
 
 static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
-@interface CollectionTableView () <UITableViewDelegate,MWPhotoBrowserDelegate> {
+@interface CollectionTableView () <UITableViewDelegate,MWPhotoBrowserDelegate,MONActivityIndicatorViewDelegate> {
     NSMutableArray *_selections;
     NSUInteger _currentPageIndex;
 }
@@ -28,6 +29,7 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 @property (strong, nonatomic) NSMutableArray *photos;
 @property (strong, nonatomic) NSMutableDictionary *collectionsDictionary;
 @property (strong, nonatomic) NSMutableArray *collectionImageURLs;
+
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 #define ShowHUD(view) [MBProgressHUD showHUDAddedTo:view animated:YES]
@@ -65,7 +67,32 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
     titles = @[@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg",@"Celine", @"Chloe", @"Diane von Furstenberg", @"Chloe",@"Celine"];
     tableData = @[@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg",@"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ce1.jpg", @"ch1.jpg",@"dv1.jpg", @"ch1.jpg",@"ce1.jpg"];
     [self makeCollectionRequest];
+    
     [self.tableView reloadData];
+}
+
+- (UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView
+      circleBackgroundColorAtIndex:(NSUInteger)index {
+    // For a random background color for a particular circle
+    CGFloat red   = (arc4random() % 256)/255.0;
+    CGFloat green = (arc4random() % 256)/255.0;
+    CGFloat blue  = (arc4random() % 256)/255.0;
+    CGFloat alpha = 1.0f;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
+-(void)makeMONActivityIndicator
+{
+    MONActivityIndicatorView *indicatorView = [[MONActivityIndicatorView alloc] init];
+    indicatorView.delegate = self;
+    indicatorView.numberOfCircles = 5;
+    indicatorView.radius = 10;
+    indicatorView.internalSpacing = 3;
+    indicatorView.duration = 0.8;
+    indicatorView.delay = 0.2;
+    indicatorView.center = self.view.center;
+    [self.view addSubview:indicatorView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +116,11 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
 -(void)makeCollectionRequest
 {
+    
+    [self makeMONActivityIndicator];
+    
+    
+    
     NSString *urlString = [NSString stringWithFormat:@"%@/collections/media", BaseURLString];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -104,9 +136,12 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
             [urlArray addObject:[dict valueForKey:@"thumb_url"]];
         }
         self.collectionImageURLs = urlArray;
+        
         [self.tableView reloadData];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Request Failed: %@", error);
+        
     }];
     [op start];
 }
@@ -162,6 +197,7 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
     }
     [cell.CollectionImage sd_setImageWithURL:[appendedURLArray objectAtIndex:indexPath.row]];
     [hud hide:YES];
+   
     return cell;
 }
 

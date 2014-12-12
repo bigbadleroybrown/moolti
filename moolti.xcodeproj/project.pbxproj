@@ -61,6 +61,17 @@
 		2E1D54CC1A1EA58300D304D1 /* ce2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54CB1A1EA58300D304D1 /* ce2.jpg */; };
 		2E1D54CE1A1EA6AA00D304D1 /* photo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54CD1A1EA6AA00D304D1 /* photo2.jpg */; };
 		2E1D54D11A1F9B4700D304D1 /* photo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54D01A1F9B4700D304D1 /* photo1.jpg */; };
+		2E5BFD5E1A3898EF00D17971 /* ContactPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BFD5D1A3898EF00D17971 /* ContactPickerViewController.m */; };
+		2E5BFD611A38999500D17971 /* ContactPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BFD601A38999500D17971 /* ContactPickerTableViewCell.m */; };
+		2E5BFD641A389CB900D17971 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BFD631A389CB900D17971 /* Contact.m */; };
+		2E5BFD661A38BA2D00D17971 /* ContactPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD651A38BA2D00D17971 /* ContactPickerViewController.xib */; };
+		2E5BFD6A1A38BAE700D17971 /* ContactPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD691A38BAE700D17971 /* ContactPickerTableViewCell.xib */; };
+		2E5BFD711A38C1C900D17971 /* icon-avatar-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD6B1A38C1C900D17971 /* icon-avatar-60x60.png */; };
+		2E5BFD721A38C1C900D17971 /* icon-avatar-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD6C1A38C1C900D17971 /* icon-avatar-60x60@2x.png */; };
+		2E5BFD731A38C1C900D17971 /* icon-checkbox-selected-green-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD6D1A38C1C900D17971 /* icon-checkbox-selected-green-25x25.png */; };
+		2E5BFD741A38C1C900D17971 /* icon-checkbox-selected-green-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD6E1A38C1C900D17971 /* icon-checkbox-selected-green-25x25@2x.png */; };
+		2E5BFD751A38C1C900D17971 /* icon-checkbox-unselected-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD6F1A38C1C900D17971 /* icon-checkbox-unselected-25x25.png */; };
+		2E5BFD761A38C1C900D17971 /* icon-checkbox-unselected-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD701A38C1C900D17971 /* icon-checkbox-unselected-25x25@2x.png */; };
 		2E87570B1A35FB7B00A7C937 /* SMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E87570A1A35FB7B00A7C937 /* SMSViewController.m */; };
 		2E87570E1A35FD8E00A7C937 /* SMSDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E87570D1A35FD8E00A7C937 /* SMSDataModel.m */; };
 		2E94073D1A1A8C6A0099F37C /* inboxInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */; };
@@ -73,15 +84,6 @@
 		2E94075B1A1A9A700099F37C /* camera-photo-tips.html in Resources */ = {isa = PBXBuildFile; fileRef = 2E94074E1A1A9A700099F37C /* camera-photo-tips.html */; };
 		2E94075C1A1A9A700099F37C /* foggy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E94074F1A1A9A700099F37C /* foggy.jpg */; };
 		2E94075D1A1A9A700099F37C /* Hello World.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407501A1A9A700099F37C /* Hello World.ppt */; };
-		2E94075E1A1A9A700099F37C /* icon0.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407511A1A9A700099F37C /* icon0.png */; };
-		2E94075F1A1A9A700099F37C /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407521A1A9A700099F37C /* icon1.png */; };
-		2E9407601A1A9A700099F37C /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407531A1A9A700099F37C /* icon2.png */; };
-		2E9407611A1A9A700099F37C /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407541A1A9A700099F37C /* icon3.png */; };
-		2E9407621A1A9A700099F37C /* icon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407551A1A9A700099F37C /* icon4.png */; };
-		2E9407631A1A9A700099F37C /* icon5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407561A1A9A700099F37C /* icon5.png */; };
-		2E9407641A1A9A700099F37C /* media.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407571A1A9A700099F37C /* media.png */; };
-		2E9407651A1A9A700099F37C /* no more complaint.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407581A1A9A700099F37C /* no more complaint.png */; };
-		2E9407661A1A9A700099F37C /* Why Appcoda.doc in Resources */ = {isa = PBXBuildFile; fileRef = 2E9407591A1A9A700099F37C /* Why Appcoda.doc */; };
 		2EA0A0D71A1AF8E800DBFB81 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA0A0D61A1AF8E800DBFB81 /* MediaPlayer.framework */; };
 		2EA0A1321A1B08D600DBFB81 /* Conversation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0A1271A1B08D600DBFB81 /* Conversation.plist */; };
 		2EA0A1331A1B08D600DBFB81 /* arturdev.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0A1291A1B08D600DBFB81 /* arturdev.jpg */; };
@@ -94,6 +96,13 @@
 		2EA0A13A1A1B08D600DBFB81 /* lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0A1301A1B08D600DBFB81 /* lion.jpg */; };
 		2EA0A13B1A1B08D600DBFB81 /* lion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0A1311A1B08D600DBFB81 /* lion.mp4 */; };
 		2EA0A1401A1B0D1800DBFB81 /* MessagingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */; };
+		2EB719321A37ABD200ED3E01 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB719311A37ABD200ED3E01 /* QuartzCore.framework */; };
+		2EB719351A37ABEA00ED3E01 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB719331A37ABEA00ED3E01 /* AddressBook.framework */; };
+		2EB719361A37ABEA00ED3E01 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB719341A37ABEA00ED3E01 /* AddressBookUI.framework */; };
+		2EB719381A37ABF700ED3E01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB719371A37ABF700ED3E01 /* CoreGraphics.framework */; };
+		2EB7193C1A37AF3300ED3E01 /* ContactBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7193B1A37AF3300ED3E01 /* ContactBubble.m */; };
+		2EB7193F1A37B12000ED3E01 /* BubbleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7193E1A37B12000ED3E01 /* BubbleColor.m */; };
+		2EB719421A37B8AE00ED3E01 /* ContactPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB719411A37B8AE00ED3E01 /* ContactPickerView.m */; };
 		2ECE5E7E1A159DA0000F78BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E7D1A159DA0000F78BD /* main.m */; };
 		2ECE5E811A159DA0000F78BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E801A159DA0000F78BD /* AppDelegate.m */; };
 		2ECE5E841A159DA0000F78BD /* moolti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE5E821A159DA0000F78BD /* moolti.xcdatamodeld */; };
@@ -175,6 +184,20 @@
 		2E1D54CB1A1EA58300D304D1 /* ce2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ce2.jpg; sourceTree = "<group>"; };
 		2E1D54CD1A1EA6AA00D304D1 /* photo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo2.jpg; sourceTree = "<group>"; };
 		2E1D54D01A1F9B4700D304D1 /* photo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo1.jpg; sourceTree = "<group>"; };
+		2E5BFD5C1A3898EF00D17971 /* ContactPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPickerViewController.h; sourceTree = "<group>"; };
+		2E5BFD5D1A3898EF00D17971 /* ContactPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPickerViewController.m; sourceTree = "<group>"; };
+		2E5BFD5F1A38999500D17971 /* ContactPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPickerTableViewCell.h; sourceTree = "<group>"; };
+		2E5BFD601A38999500D17971 /* ContactPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPickerTableViewCell.m; sourceTree = "<group>"; };
+		2E5BFD621A389CB900D17971 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		2E5BFD631A389CB900D17971 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		2E5BFD651A38BA2D00D17971 /* ContactPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactPickerViewController.xib; sourceTree = "<group>"; };
+		2E5BFD691A38BAE700D17971 /* ContactPickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactPickerTableViewCell.xib; sourceTree = "<group>"; };
+		2E5BFD6B1A38C1C900D17971 /* icon-avatar-60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-avatar-60x60.png"; path = "images/icon-avatar-60x60.png"; sourceTree = "<group>"; };
+		2E5BFD6C1A38C1C900D17971 /* icon-avatar-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-avatar-60x60@2x.png"; path = "images/icon-avatar-60x60@2x.png"; sourceTree = "<group>"; };
+		2E5BFD6D1A38C1C900D17971 /* icon-checkbox-selected-green-25x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-checkbox-selected-green-25x25.png"; path = "images/icon-checkbox-selected-green-25x25.png"; sourceTree = "<group>"; };
+		2E5BFD6E1A38C1C900D17971 /* icon-checkbox-selected-green-25x25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-checkbox-selected-green-25x25@2x.png"; path = "images/icon-checkbox-selected-green-25x25@2x.png"; sourceTree = "<group>"; };
+		2E5BFD6F1A38C1C900D17971 /* icon-checkbox-unselected-25x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-checkbox-unselected-25x25.png"; path = "images/icon-checkbox-unselected-25x25.png"; sourceTree = "<group>"; };
+		2E5BFD701A38C1C900D17971 /* icon-checkbox-unselected-25x25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-checkbox-unselected-25x25@2x.png"; path = "images/icon-checkbox-unselected-25x25@2x.png"; sourceTree = "<group>"; };
 		2E8757091A35FB7B00A7C937 /* SMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSViewController.h; sourceTree = "<group>"; };
 		2E87570A1A35FB7B00A7C937 /* SMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSViewController.m; sourceTree = "<group>"; };
 		2E87570C1A35FD8E00A7C937 /* SMSDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSDataModel.h; sourceTree = "<group>"; };
@@ -193,15 +216,6 @@
 		2E94074E1A1A9A700099F37C /* camera-photo-tips.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "camera-photo-tips.html"; sourceTree = "<group>"; };
 		2E94074F1A1A9A700099F37C /* foggy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = foggy.jpg; sourceTree = "<group>"; };
 		2E9407501A1A9A700099F37C /* Hello World.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hello World.ppt"; sourceTree = "<group>"; };
-		2E9407511A1A9A700099F37C /* icon0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon0.png; sourceTree = "<group>"; };
-		2E9407521A1A9A700099F37C /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
-		2E9407531A1A9A700099F37C /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
-		2E9407541A1A9A700099F37C /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
-		2E9407551A1A9A700099F37C /* icon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon4.png; sourceTree = "<group>"; };
-		2E9407561A1A9A700099F37C /* icon5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon5.png; sourceTree = "<group>"; };
-		2E9407571A1A9A700099F37C /* media.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = media.png; sourceTree = "<group>"; };
-		2E9407581A1A9A700099F37C /* no more complaint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no more complaint.png"; sourceTree = "<group>"; };
-		2E9407591A1A9A700099F37C /* Why Appcoda.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Why Appcoda.doc"; sourceTree = "<group>"; };
 		2EA0A0D61A1AF8E800DBFB81 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2EA0A1271A1B08D600DBFB81 /* Conversation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Conversation.plist; sourceTree = "<group>"; };
 		2EA0A1291A1B08D600DBFB81 /* arturdev.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arturdev.jpg; sourceTree = "<group>"; };
@@ -214,6 +228,16 @@
 		2EA0A1301A1B08D600DBFB81 /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lion.jpg; sourceTree = "<group>"; };
 		2EA0A1311A1B08D600DBFB81 /* lion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lion.mp4; sourceTree = "<group>"; };
 		2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MessagingVC.storyboard; path = moolti/MessagingVC.storyboard; sourceTree = "<group>"; };
+		2EB719311A37ABD200ED3E01 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2EB719331A37ABEA00ED3E01 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		2EB719341A37ABEA00ED3E01 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		2EB719371A37ABF700ED3E01 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2EB7193A1A37AF3300ED3E01 /* ContactBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactBubble.h; sourceTree = "<group>"; };
+		2EB7193B1A37AF3300ED3E01 /* ContactBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactBubble.m; sourceTree = "<group>"; };
+		2EB7193D1A37B12000ED3E01 /* BubbleColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleColor.h; sourceTree = "<group>"; };
+		2EB7193E1A37B12000ED3E01 /* BubbleColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleColor.m; sourceTree = "<group>"; };
+		2EB719401A37B8AE00ED3E01 /* ContactPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPickerView.h; sourceTree = "<group>"; };
+		2EB719411A37B8AE00ED3E01 /* ContactPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPickerView.m; sourceTree = "<group>"; };
 		2ECE5E781A159DA0000F78BD /* moolti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moolti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ECE5E7C1A159DA0000F78BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ECE5E7D1A159DA0000F78BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -236,6 +260,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EB719381A37ABF700ED3E01 /* CoreGraphics.framework in Frameworks */,
+				2EB719351A37ABEA00ED3E01 /* AddressBook.framework in Frameworks */,
+				2EB719361A37ABEA00ED3E01 /* AddressBookUI.framework in Frameworks */,
+				2EB719321A37ABD200ED3E01 /* QuartzCore.framework in Frameworks */,
 				2EA0A0D71A1AF8E800DBFB81 /* MediaPlayer.framework in Frameworks */,
 				2E9407451A1A8EC00099F37C /* MessageUI.framework in Frameworks */,
 				B851C17534C803B06B8A2619 /* libPods.a in Frameworks */,
@@ -255,6 +283,10 @@
 		10DEA02D2E200AD1FA1C3B2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EB719371A37ABF700ED3E01 /* CoreGraphics.framework */,
+				2EB719331A37ABEA00ED3E01 /* AddressBook.framework */,
+				2EB719341A37ABEA00ED3E01 /* AddressBookUI.framework */,
+				2EB719311A37ABD200ED3E01 /* QuartzCore.framework */,
 				2EA0A0D61A1AF8E800DBFB81 /* MediaPlayer.framework */,
 				2E9407441A1A8EC00099F37C /* MessageUI.framework */,
 				2664498DEC717EFBC1ED5361 /* libPods.a */,
@@ -342,6 +374,8 @@
 				2ECE5E881A159DA0000F78BD /* Main.storyboard */,
 				2E1D53ED1A1D613400D304D1 /* CollectionCell.xib */,
 				2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */,
+				2E5BFD651A38BA2D00D17971 /* ContactPickerViewController.xib */,
+				2E5BFD691A38BAE700D17971 /* ContactPickerTableViewCell.xib */,
 			);
 			name = Views;
 			path = ..;
@@ -354,15 +388,6 @@
 				2E94074E1A1A9A700099F37C /* camera-photo-tips.html */,
 				2E94074F1A1A9A700099F37C /* foggy.jpg */,
 				2E9407501A1A9A700099F37C /* Hello World.ppt */,
-				2E9407511A1A9A700099F37C /* icon0.png */,
-				2E9407521A1A9A700099F37C /* icon1.png */,
-				2E9407531A1A9A700099F37C /* icon2.png */,
-				2E9407541A1A9A700099F37C /* icon3.png */,
-				2E9407551A1A9A700099F37C /* icon4.png */,
-				2E9407561A1A9A700099F37C /* icon5.png */,
-				2E9407571A1A9A700099F37C /* media.png */,
-				2E9407581A1A9A700099F37C /* no more complaint.png */,
-				2E9407591A1A9A700099F37C /* Why Appcoda.doc */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -392,6 +417,25 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		2EB719391A37AF1300ED3E01 /* contacts */ = {
+			isa = PBXGroup;
+			children = (
+				2EB7193A1A37AF3300ED3E01 /* ContactBubble.h */,
+				2EB7193B1A37AF3300ED3E01 /* ContactBubble.m */,
+				2EB7193D1A37B12000ED3E01 /* BubbleColor.h */,
+				2EB7193E1A37B12000ED3E01 /* BubbleColor.m */,
+				2EB719401A37B8AE00ED3E01 /* ContactPickerView.h */,
+				2EB719411A37B8AE00ED3E01 /* ContactPickerView.m */,
+				2E5BFD5C1A3898EF00D17971 /* ContactPickerViewController.h */,
+				2E5BFD5D1A3898EF00D17971 /* ContactPickerViewController.m */,
+				2E5BFD5F1A38999500D17971 /* ContactPickerTableViewCell.h */,
+				2E5BFD601A38999500D17971 /* ContactPickerTableViewCell.m */,
+				2E5BFD621A389CB900D17971 /* Contact.h */,
+				2E5BFD631A389CB900D17971 /* Contact.m */,
+			);
+			name = contacts;
+			sourceTree = "<group>";
+		};
 		2ECE5E6F1A159DA0000F78BD = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +459,7 @@
 		2ECE5E7A1A159DA0000F78BD /* moolti */ = {
 			isa = PBXGroup;
 			children = (
+				2EB719391A37AF1300ED3E01 /* contacts */,
 				2E1D54681A1E689900D304D1 /* mooltiMedia */,
 				2E8757081A35F52B00A7C937 /* Views */,
 				2E1D53E21A1BC42A00D304D1 /* View Controllers */,
@@ -432,6 +477,12 @@
 				2E94073E1A1A8CE90099F37C /* inboxInterface.h */,
 				2E94073F1A1A8CE90099F37C /* inboxInterface.m */,
 				2ECE5E8B1A159DA0000F78BD /* Images.xcassets */,
+				2E5BFD6B1A38C1C900D17971 /* icon-avatar-60x60.png */,
+				2E5BFD6C1A38C1C900D17971 /* icon-avatar-60x60@2x.png */,
+				2E5BFD6D1A38C1C900D17971 /* icon-checkbox-selected-green-25x25.png */,
+				2E5BFD6E1A38C1C900D17971 /* icon-checkbox-selected-green-25x25@2x.png */,
+				2E5BFD6F1A38C1C900D17971 /* icon-checkbox-unselected-25x25.png */,
+				2E5BFD701A38C1C900D17971 /* icon-checkbox-unselected-25x25@2x.png */,
 				2ECE5E8D1A159DA0000F78BD /* LaunchScreen.xib */,
 				2ECE5E821A159DA0000F78BD /* moolti.xcdatamodeld */,
 				2ECE5E7B1A159DA0000F78BD /* Supporting Files */,
@@ -565,24 +616,25 @@
 				2EA0A1381A1B08D600DBFB81 /* doggy.jpg in Resources */,
 				2E1D549A1A1E689900D304D1 /* ce11.jpg in Resources */,
 				2E1D54AA1A1E689900D304D1 /* ce8.jpg in Resources */,
-				2E9407641A1A9A700099F37C /* media.png in Resources */,
-				2E9407661A1A9A700099F37C /* Why Appcoda.doc in Resources */,
 				2E1D54C51A1E689900D304D1 /* dv8.jpg in Resources */,
 				2E1D54B41A1E689900D304D1 /* ch6.jpg in Resources */,
 				2E1D54B01A1E689900D304D1 /* ch2.jpg in Resources */,
 				2E1D54A81A1E689900D304D1 /* ce6.jpg in Resources */,
 				2E94075C1A1A9A700099F37C /* foggy.jpg in Resources */,
 				2E1D54B91A1E689900D304D1 /* dv10.jpg in Resources */,
-				2E9407621A1A9A700099F37C /* icon4.png in Resources */,
+				2E5BFD751A38C1C900D17971 /* icon-checkbox-unselected-25x25.png in Resources */,
 				2E1D54B21A1E689900D304D1 /* ch4.jpg in Resources */,
+				2E5BFD711A38C1C900D17971 /* icon-avatar-60x60.png in Resources */,
 				2E1D54A01A1E689900D304D1 /* ce17.jpg in Resources */,
 				2E1D549D1A1E689900D304D1 /* ce14.jpg in Resources */,
 				2E94075B1A1A9A700099F37C /* camera-photo-tips.html in Resources */,
 				2E94075A1A1A9A700099F37C /* 10 Great iPhone Tips.pdf in Resources */,
 				2EA0A1361A1B08D600DBFB81 /* bubble_rect_sending.png in Resources */,
+				2E5BFD6A1A38BAE700D17971 /* ContactPickerTableViewCell.xib in Resources */,
 				2ECE5E8A1A159DA0000F78BD /* Main.storyboard in Resources */,
 				2EF533EB1A1FCC3300F5FCCF /* house.jpg in Resources */,
 				2E1D54B81A1E689900D304D1 /* dv1.jpg in Resources */,
+				2E5BFD661A38BA2D00D17971 /* ContactPickerViewController.xib in Resources */,
 				2E1D54B61A1E689900D304D1 /* ch8.jpg in Resources */,
 				2E1D54AC1A1E689900D304D1 /* ch1.jpg in Resources */,
 				2E1D54981A1E689900D304D1 /* ce1.jpg in Resources */,
@@ -592,6 +644,7 @@
 				2EA0A13A1A1B08D600DBFB81 /* lion.jpg in Resources */,
 				2E1D549E1A1E689900D304D1 /* ce15.jpg in Resources */,
 				2E1D54C41A1E689900D304D1 /* dv7.jpg in Resources */,
+				2E5BFD761A38C1C900D17971 /* icon-checkbox-unselected-25x25@2x.png in Resources */,
 				2EA0A1321A1B08D600DBFB81 /* Conversation.plist in Resources */,
 				2E1D54B11A1E689900D304D1 /* ch3.jpg in Resources */,
 				2E1D54BF1A1E689900D304D1 /* dv2.jpg in Resources */,
@@ -608,18 +661,14 @@
 				2E1D54A61A1E689900D304D1 /* ce4.jpg in Resources */,
 				2EA0A1401A1B0D1800DBFB81 /* MessagingVC.storyboard in Resources */,
 				2EA0A1371A1B08D600DBFB81 /* bubble_rect_sending@2x.png in Resources */,
-				2E9407601A1A9A700099F37C /* icon2.png in Resources */,
-				2E9407611A1A9A700099F37C /* icon3.png in Resources */,
 				2EA0A1391A1B08D600DBFB81 /* jobs.jpg in Resources */,
 				2E1D54A41A1E689900D304D1 /* ce20.jpg in Resources */,
-				2E9407631A1A9A700099F37C /* icon5.png in Resources */,
 				2ECE5E8C1A159DA0000F78BD /* Images.xcassets in Resources */,
-				2E94075F1A1A9A700099F37C /* icon1.png in Resources */,
 				2E1D549B1A1E689900D304D1 /* ce12.jpg in Resources */,
 				2E1D54BA1A1E689900D304D1 /* dv11.jpg in Resources */,
 				2EA0A1341A1B08D600DBFB81 /* bubble_rect_receiving.png in Resources */,
-				2E94075E1A1A9A700099F37C /* icon0.png in Resources */,
 				2E1D54BC1A1E689900D304D1 /* dv13.jpg in Resources */,
+				2E5BFD731A38C1C900D17971 /* icon-checkbox-selected-green-25x25.png in Resources */,
 				2E1D54AF1A1E689900D304D1 /* ch12.jpg in Resources */,
 				2E1D54B71A1E689900D304D1 /* ch9.jpg in Resources */,
 				2E1D54C01A1E689900D304D1 /* dv3.jpg in Resources */,
@@ -628,10 +677,11 @@
 				2E1D54CE1A1EA6AA00D304D1 /* photo2.jpg in Resources */,
 				2E1D54AD1A1E689900D304D1 /* ch10.jpg in Resources */,
 				2E1D549C1A1E689900D304D1 /* ce13.jpg in Resources */,
-				2E9407651A1A9A700099F37C /* no more complaint.png in Resources */,
 				2E1D54B31A1E689900D304D1 /* ch5.jpg in Resources */,
 				2E1D54C61A1E689900D304D1 /* dv9.jpg in Resources */,
+				2E5BFD721A38C1C900D17971 /* icon-avatar-60x60@2x.png in Resources */,
 				2E1D54A11A1E689900D304D1 /* ce18.jpg in Resources */,
+				2E5BFD741A38C1C900D17971 /* icon-checkbox-selected-green-25x25@2x.png in Resources */,
 				2E1D54BD1A1E689900D304D1 /* dv14.jpg in Resources */,
 				2E1D54991A1E689900D304D1 /* ce10.jpg in Resources */,
 				2E1D54C21A1E689900D304D1 /* dv5.jpg in Resources */,
@@ -687,8 +737,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E5BFD611A38999500D17971 /* ContactPickerTableViewCell.m in Sources */,
 				2E94074B1A1A92300099F37C /* DEMOLeftMenuViewController.m in Sources */,
 				2E9407481A1A92240099F37C /* DEMOFirstViewController.m in Sources */,
+				2EB7193C1A37AF3300ED3E01 /* ContactBubble.m in Sources */,
+				2EB719421A37B8AE00ED3E01 /* ContactPickerView.m in Sources */,
 				2ECE5E811A159DA0000F78BD /* AppDelegate.m in Sources */,
 				2E9407431A1A8D6A0099F37C /* inboxInterfaceCell.m in Sources */,
 				2ECE5E7E1A159DA0000F78BD /* main.m in Sources */,
@@ -696,10 +749,13 @@
 				2E9407401A1A8CE90099F37C /* inboxInterface.m in Sources */,
 				2ECE5E841A159DA0000F78BD /* moolti.xcdatamodeld in Sources */,
 				2E87570B1A35FB7B00A7C937 /* SMSViewController.m in Sources */,
+				2E5BFD5E1A3898EF00D17971 /* ContactPickerViewController.m in Sources */,
 				2E1D53E81A1BEBE500D304D1 /* GalleryVC.m in Sources */,
 				2E1D53F11A1D617D00D304D1 /* CollectionCell.m in Sources */,
 				2E87570E1A35FD8E00A7C937 /* SMSDataModel.m in Sources */,
 				2E1D53EC1A1D0F8D00D304D1 /* CollectionTableView.m in Sources */,
+				2EB7193F1A37B12000ED3E01 /* BubbleColor.m in Sources */,
+				2E5BFD641A389CB900D17971 /* Contact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

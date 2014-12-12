@@ -45,6 +45,7 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.0)
   - JSQSystemSoundPlayer (2.0.0)
   - MBProgressHUD (0.9)
+  - MONActivityIndicatorView (0.0.1)
   - MWPhotoBrowser (1.4.1):
     - DACircularProgress
     - MBProgressHUD (~> 0.8)
@@ -70,6 +71,7 @@ DEPENDENCIES:
   - FontAwesomeKit (~> 2.1.0)
   - JBKenBurnsView
   - JSQMessagesViewController
+  - MONActivityIndicatorView
   - MWPhotoBrowser
   - RESideMenu (~> 4.0.7)
 
@@ -92,6 +94,7 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 8998c086bf6db5d6190376041903d5be2961f03f
   JSQSystemSoundPlayer: c98443b1cbb3b45db09d0d3d6c2355cf78294981
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  MONActivityIndicatorView: 728965121e59cef32c1bc4676f6868e35f3c8c61
   MWPhotoBrowser: be05b3b7521e961382a4ba5579685bf5a00b93d8
   PSTCollectionView: d9f466e4554cc83260ca9bde7beb27f308e8fd76
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
