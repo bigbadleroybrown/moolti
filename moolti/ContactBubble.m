@@ -138,7 +138,7 @@
         return NO;
     }
     
-    // Capture "delete" key press when cell is empty
+    
     if ([textView.text isEqualToString:@""] && [text isEqualToString:@""]){
         if ([self.delegate respondsToSelector:@selector(contactBubbleShouldBeRemoved:)]){
             [self.delegate contactBubbleShouldBeRemoved:self];

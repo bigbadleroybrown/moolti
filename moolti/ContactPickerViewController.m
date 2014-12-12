@@ -44,6 +44,9 @@ UIBarButtonItem *barButton;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     
     self.navigationItem.rightBarButtonItem = barButton;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     
     self.contactPickerView = [[ContactPickerView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
     self.contactPickerView.delegate = self;
@@ -279,21 +282,21 @@ UIBarButtonItem *barButton;
     checkboxImageView.image = image;
     
     cell.accessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [(UIButton*)cell.accessoryView addTarget:self action:@selector(viewContactDetail:) forControlEvents:UIControlEventTouchUpInside];
+    [(UIButton *)cell.accessoryView addTarget:self action:@selector(viewContactDetail:) forControlEvents:UIControlEventTouchUpInside];
     cell.accessoryView.tag = contact.recordId;
     
     // // For custom accessory view button use this.
-    //    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    //    button.frame = CGRectMake(0.0f, 0.0f, 150.0f, 25.0f);
-    //
-    //    [button setTitle:@"Expand"
-    //            forState:UIControlStateNormal];
-    //
-    //    [button addTarget:self
-    //               action:@selector(viewContactDetail:)
-    //     forControlEvents:UIControlEventTouchUpInside];
-    //
-    //    cell.accessoryView = button;
+//        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+//        button.frame = CGRectMake(0.0f, 0.0f, 150.0f, 25.0f);
+//    
+//        [button setTitle:@"Expand"
+//                forState:UIControlStateNormal];
+//    
+//        [button addTarget:self
+//                   action:@selector(viewContactDetail:)
+//         forControlEvents:UIControlEventTouchUpInside];
+//    
+//        cell.accessoryView = button;
     
     return cell;
 }
@@ -408,12 +411,12 @@ UIBarButtonItem *barButton;
 // TODO: send contact object
 - (void)done:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Done!"
-                                                        message:@"Now do whatevet you want!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-    [alertView show];
+    NSMutableArray *mutArray = [NSMutableArray new];
+    [mutArray addObject:self.selectedContacts];
+    NSLog(@"%@", mutArray);
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:mutArray applicationActivities:nil];
+    
+     [self presentViewController:activityVC animated:YES completion:nil];    
 }
 
 @end

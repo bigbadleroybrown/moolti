@@ -388,7 +388,6 @@
     if ( [text isEqualToString:@"\n"] ) { // Return key was pressed
         return NO;
     }
-    
     // Capture "delete" key press when cell is empty
     if ([textView.text isEqualToString:@""] && [text isEqualToString:@""]){
         // If no contacts are selected, select the last contact
