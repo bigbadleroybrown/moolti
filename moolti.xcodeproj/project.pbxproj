@@ -61,8 +61,6 @@
 		2E1D54CC1A1EA58300D304D1 /* ce2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54CB1A1EA58300D304D1 /* ce2.jpg */; };
 		2E1D54CE1A1EA6AA00D304D1 /* photo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54CD1A1EA6AA00D304D1 /* photo2.jpg */; };
 		2E1D54D11A1F9B4700D304D1 /* photo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E1D54D01A1F9B4700D304D1 /* photo1.jpg */; };
-		2E3372F01A3B9D2200453C5D /* TRManualLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E3372EF1A3B9D2200453C5D /* TRManualLoginViewController.storyboard */; };
-		2E3372F31A3B9F2600453C5D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3372F21A3B9F2600453C5D /* LoginViewController.m */; };
 		2E5BFD5E1A3898EF00D17971 /* ContactPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BFD5D1A3898EF00D17971 /* ContactPickerViewController.m */; };
 		2E5BFD611A38999500D17971 /* ContactPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BFD601A38999500D17971 /* ContactPickerTableViewCell.m */; };
 		2E5BFD641A389CB900D17971 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BFD631A389CB900D17971 /* Contact.m */; };
@@ -186,9 +184,6 @@
 		2E1D54CB1A1EA58300D304D1 /* ce2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ce2.jpg; sourceTree = "<group>"; };
 		2E1D54CD1A1EA6AA00D304D1 /* photo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo2.jpg; sourceTree = "<group>"; };
 		2E1D54D01A1F9B4700D304D1 /* photo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo1.jpg; sourceTree = "<group>"; };
-		2E3372EF1A3B9D2200453C5D /* TRManualLoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TRManualLoginViewController.storyboard; sourceTree = "<group>"; };
-		2E3372F11A3B9F2600453C5D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		2E3372F21A3B9F2600453C5D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		2E5BFD5C1A3898EF00D17971 /* ContactPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPickerViewController.h; sourceTree = "<group>"; };
 		2E5BFD5D1A3898EF00D17971 /* ContactPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPickerViewController.m; sourceTree = "<group>"; };
 		2E5BFD5F1A38999500D17971 /* ContactPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPickerTableViewCell.h; sourceTree = "<group>"; };
@@ -312,8 +307,6 @@
 				2E1D53DF1A1BA1DD00D304D1 /* DEMORightMenuViewController.m */,
 				2E8757091A35FB7B00A7C937 /* SMSViewController.h */,
 				2E87570A1A35FB7B00A7C937 /* SMSViewController.m */,
-				2E3372F11A3B9F2600453C5D /* LoginViewController.h */,
-				2E3372F21A3B9F2600453C5D /* LoginViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -378,7 +371,6 @@
 		2E8757081A35F52B00A7C937 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2E3372EF1A3B9D2200453C5D /* TRManualLoginViewController.storyboard */,
 				2ECE5E881A159DA0000F78BD /* Main.storyboard */,
 				2E1D53ED1A1D613400D304D1 /* CollectionCell.xib */,
 				2EA0A13F1A1B0D1800DBFB81 /* MessagingVC.storyboard */,
@@ -672,7 +664,6 @@
 				2EA0A1391A1B08D600DBFB81 /* jobs.jpg in Resources */,
 				2E1D54A41A1E689900D304D1 /* ce20.jpg in Resources */,
 				2ECE5E8C1A159DA0000F78BD /* Images.xcassets in Resources */,
-				2E3372F01A3B9D2200453C5D /* TRManualLoginViewController.storyboard in Resources */,
 				2E1D549B1A1E689900D304D1 /* ce12.jpg in Resources */,
 				2E1D54BA1A1E689900D304D1 /* dv11.jpg in Resources */,
 				2EA0A1341A1B08D600DBFB81 /* bubble_rect_receiving.png in Resources */,
@@ -750,7 +741,6 @@
 				2E94074B1A1A92300099F37C /* DEMOLeftMenuViewController.m in Sources */,
 				2E9407481A1A92240099F37C /* DEMOFirstViewController.m in Sources */,
 				2EB7193C1A37AF3300ED3E01 /* ContactBubble.m in Sources */,
-				2E3372F31A3B9F2600453C5D /* LoginViewController.m in Sources */,
 				2EB719421A37B8AE00ED3E01 /* ContactPickerView.m in Sources */,
 				2ECE5E811A159DA0000F78BD /* AppDelegate.m in Sources */,
 				2E9407431A1A8D6A0099F37C /* inboxInterfaceCell.m in Sources */,

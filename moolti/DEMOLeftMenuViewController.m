@@ -16,10 +16,6 @@
 #import "SMSViewController.h"
 #import "ContactPickerViewController.h"
 
-
-
-
-
 @interface DEMOLeftMenuViewController ()
 {
     NSMutableArray *_selections;
