@@ -81,19 +81,6 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
--(void)makeMONActivityIndicator
-{
-    MONActivityIndicatorView *indicatorView = [[MONActivityIndicatorView alloc] init];
-    indicatorView.delegate = self;
-    indicatorView.numberOfCircles = 5;
-    indicatorView.radius = 10;
-    indicatorView.internalSpacing = 3;
-    indicatorView.duration = 0.8;
-    indicatorView.delay = 0.2;
-    indicatorView.center = self.view.center;
-    [self.view addSubview:indicatorView];
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -116,9 +103,9 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
 -(void)makeCollectionRequest
 {
-    
-    [self makeMONActivityIndicator];
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
     
     
     NSString *urlString = [NSString stringWithFormat:@"%@/collections/media", BaseURLString];
@@ -144,6 +131,10 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
         
     }];
     [op start];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    });
 }
 
 #pragma mark - Table view data source

@@ -29,7 +29,7 @@
     // Override point for customization after application launch.
     //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-    [self.window setRootViewController:_navController];
+    //[self.window setRootViewController:_navController];
     _navController = [[UINavigationController alloc]initWithRootViewController:[[ContactPickerViewController alloc]init]];
     DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];
     DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc]init];
@@ -45,7 +45,10 @@
     sidemenuViewController.contentViewShadowRadius = 12;
     sidemenuViewController.contentViewShadowEnabled = YES;
     
-    self.window.rootViewController = sidemenuViewController;
+    //self.window.rootViewController = sidemenuViewController;
+    LoginViewController *loginVC = [[LoginViewController alloc]init];
+    UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:loginVC];
+    self.window.rootViewController = navVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

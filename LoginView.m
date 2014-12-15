@@ -43,6 +43,7 @@
         [self.errorLabel setTextAlignment:NSTextAlignmentCenter];
         [self.errorLabel setTextColor:[UIColor redColor]];
         [self addSubview:self.errorLabel];
+
     }
     
     return self;
@@ -73,6 +74,15 @@
                                        loginViewSpacing,
                                        loginErrorWidth, 44.0);
     
+    self.LoginInButton.frame = CGRectMake(loginViewLeftMargin,
+                                          self.passwordField.frame.origin.y +
+                                          self.passwordField.bounds.size.height +
+                                          loginViewSpacing,
+                                          self.bounds.size.width -
+                                          (loginViewLeftMargin +
+                                           loginViewRightMargin),
+                                          44.0);
+
 }
 
 -(void)showError:(NSString *)error

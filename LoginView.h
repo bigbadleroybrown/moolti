@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UITextField *nameField;
 @property (strong, nonatomic) UITextField *passwordField;
 @property (strong, nonatomic) UILabel *errorLabel;
+@property (strong, nonatomic) UIButton *LoginInButton;
 
 -(void)showError:(NSString*)error;
 

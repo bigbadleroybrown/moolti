@@ -9,8 +9,10 @@
 #import "DEMORightMenuViewController.h"
 #import "DEMOFirstViewController.h"
 #import "DEMOLeftMenuViewController.h"
+#import "LoginViewController.h"
+#import "MONActivityIndicatorView.h"
 
-@interface DEMORightMenuViewController ()
+@interface DEMORightMenuViewController () <MONActivityIndicatorViewDelegate>
 
 @property (strong, readwrite, nonatomic) UITableView *tableView;
 
@@ -41,17 +43,30 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    MONActivityIndicatorView *indicatorView = [[MONActivityIndicatorView alloc] init];
+    indicatorView.delegate = self;
+    indicatorView.numberOfCircles = 5;
+    indicatorView.radius = 10;
+    indicatorView.internalSpacing = 3;
+    indicatorView.duration = 0.8;
+    indicatorView.delay = 0.2;
+    indicatorView.center = self.view.center;
+    [self.view addSubview:indicatorView];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
+            
         case 0:
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[DEMOFirstViewController alloc] init]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[DEMOFirstViewController alloc] init]]
+            
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
+            
             break;
         default:
             break;

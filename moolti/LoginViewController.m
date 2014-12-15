@@ -8,8 +8,21 @@
 
 #import "LoginViewController.h"
 #import "LoginView.h"
+#import "AFOAuth2Manager.h"
+#import "MBProgressHUD.h"
+#import "AFHTTPRequestSerializer+OAuth2.h"
+#import "DEMOLeftMenuViewController.h"
+#import "DEMORightMenuViewController.h"
+#import "SMSViewController.h"
+#import "ContactPickerViewController.h"
+#import "MONActivityIndicatorView.h"
 
-@interface LoginViewController ()
+
+@interface LoginViewController () <RESideMenuDelegate, MONActivityIndicatorViewDelegate>
+
+@property (nonatomic, strong) UINavigationController *navController;
+
+#define ShowHUD(view) [MBProgressHUD showHUDAddedTo:view animated:YES]
 
 -(void)cancel:(id)sender;
 -(void)login:(id)sender;
@@ -31,6 +44,7 @@
                                                                                 style:UIBarButtonItemStylePlain
                                                                                target:self
                                                                                action:@selector(cancel:)];
+        
         
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Login"
                                                                                  style:UIBarButtonItemStylePlain
@@ -54,21 +68,97 @@
     
 }
 
+- (UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView
+      circleBackgroundColorAtIndex:(NSUInteger)index {
+    // For a random background color for a particular circle
+    CGFloat red   = (arc4random() % 256)/255.0;
+    CGFloat green = (arc4random() % 256)/255.0;
+    CGFloat blue  = (arc4random() % 256)/255.0;
+    CGFloat alpha = 1.0f;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
 -(void)login:(id)sender
 {
+    MONActivityIndicatorView *indicatorView = [[MONActivityIndicatorView alloc] init];
+    indicatorView.delegate = self;
+    indicatorView.numberOfCircles = 5;
+    indicatorView.radius = 10;
+    indicatorView.internalSpacing = 3;
+    indicatorView.duration = 0.8;
+    indicatorView.delay = 0.2;
+    indicatorView.center = self.view.center;
     
+    [self.view addSubview:indicatorView];
+//    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [indicatorView startAnimating];
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        // Do something...
+        
     
+//    LoginView *view = (LoginView *)self.view;
+//    NSURL *baseURL = [NSURL URLWithString:@"https://moolti-auth-example.herokuapp.com/token"];
+//    AFOAuth2Manager *Oauth2Manager = [[AFOAuth2Manager alloc]initWithBaseURL:baseURL
+//                                                                clientID:kClientId
+//                                                                      secret:kClientSecret];
+//    
+//    [Oauth2Manager authenticateUsingOAuthWithURLString:@"/oauth/token"
+//                                              username:@"username"
+//                                              password:@"password"
+//                                                 scope:@"email"
+//                                               success:^(AFOAuthCredential *credential) {
+//                                                   NSLog(@"Token: %@", credential.accessToken);
+//                                                   [self dismissViewControllerAnimated:YES completion:nil];
+//                                               }
+//                                               failure:^(NSError *error) {
+//                                                   NSLog(@"Error: %@", error);
+//                                               }];
+    //[self dismissViewControllerAnimated:YES completion:nil];
     
+    _navController = [[UINavigationController alloc]initWithRootViewController:[[ContactPickerViewController alloc]init]];
+    DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];
+    DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc]init];
+    RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
+    
+    //general menu settings
+    sidemenuViewController.backgroundImage = [UIImage imageNamed:@"homebackground"];
+    sidemenuViewController.menuPreferredStatusBarStyle = 1;
+    sidemenuViewController.delegate = self;
+    sidemenuViewController.contentViewShadowColor = [UIColor blackColor];
+    sidemenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    sidemenuViewController.contentViewShadowOpacity = 0.6;
+    sidemenuViewController.contentViewShadowRadius = 12;
+    sidemenuViewController.contentViewShadowEnabled = YES;
+    
+        sleep(4.0);
+    
+    [self presentViewController:sidemenuViewController animated: NO completion:nil];
+        [indicatorView stopAnimating];
+        //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
+    
+    NSLog(@"I got tapped");
+    
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.leftBarButtonItem.enabled = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)cancel:(id)sender
+{
+    NSLog(@"Tapped Cancel");
 }
 
 /*
