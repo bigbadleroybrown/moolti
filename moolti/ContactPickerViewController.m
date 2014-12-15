@@ -27,6 +27,12 @@ UIBarButtonItem *barButton;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Select Contacts (0)";
+        [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                               [UIFont fontWithName:@"Avenir-Light" size:18.0], NSFontAttributeName, nil]];
+        
+        NSDictionary* barButtonItemAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Avenir-Light" size:15.0f]};
+        [[UIBarButtonItem appearance] setTitleTextAttributes: barButtonItemAttributes forState:UIControlStateNormal];
         
         CFErrorRef error;
         _addressBookRef = ABAddressBookCreateWithOptions(NULL, &error);
@@ -40,9 +46,8 @@ UIBarButtonItem *barButton;
     
     barButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(done:)];
     barButton.enabled = FALSE;
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
-    
+  
     self.navigationItem.rightBarButtonItem = barButton;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];

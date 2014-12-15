@@ -23,6 +23,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.navigationItem.title = @"Moolti Login";
+        [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor blackColor], NSForegroundColorAttributeName,
+                                                               [UIFont fontWithName:@"Avenir-Light" size:18.0], NSFontAttributeName, nil]];
         
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Cancel"
                                                                                 style:UIBarButtonItemStylePlain
@@ -33,7 +36,12 @@
                                                                                  style:UIBarButtonItemStylePlain
                                                                                 target:self
                                                                                 action:@selector(login:)];
+
+        [self.navigationItem.rightBarButtonItem setTintColor:[UIColor blackColor]];
+        [self.navigationItem.leftBarButtonItem setTintColor:[UIColor blackColor]];
         
+        NSDictionary* barButtonItemAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Avenir-Light" size:15.0f]};
+        [[UIBarButtonItem appearance] setTitleTextAttributes: barButtonItemAttributes forState:UIControlStateNormal];
     }
     
     return self;
@@ -48,6 +56,7 @@
 
 -(void)login:(id)sender
 {
+    
     
     
 }

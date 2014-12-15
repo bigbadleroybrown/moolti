@@ -7,7 +7,7 @@
 //
 
 #define loginErrorWidth 300.0
-#define loginViewTopMargin 70.0
+#define loginViewTopMargin 100.0
 #define loginViewRightMargin 20.0
 #define loginViewLeftMargin 20.0
 #define loginViewSpacing 10.0
@@ -31,6 +31,7 @@
         [self addSubview:self.nameField];
         
         self.passwordField = [[UITextField alloc]initWithFrame:CGRectZero];
+        self.passwordField.secureTextEntry = YES;
         [self.passwordField setAutocorrectionType:UITextAutocorrectionTypeNo];
         [self.passwordField setPlaceholder:@"Password"];
         [self.passwordField setFont:[UIFont fontWithName:@"Avenir-Light" size:loginFontSize]];

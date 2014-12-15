@@ -177,12 +177,14 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
     //cell labels
     cell.CollectionName.text = [titles objectAtIndex:indexPath.row];
     cell.CollectionSubLabel.text = @"Spring 2015 Ready-to-Wear";
+    cell.CollectionName.font = [UIFont fontWithName:@"Avenir-Light" size:17.0];
     cell.CollectionName.textColor = [UIColor whiteColor];
+    cell.CollectionSubLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0];
     cell.CollectionSubLabel.textColor = [UIColor whiteColor];
     
     //general cell settings
     cell.backgroundColor = [UIColor blackColor];
-    cell.textLabel.font = [UIFont fontWithName:@"Avenir Light" size:12];
+    //cell.textLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     //cell image
