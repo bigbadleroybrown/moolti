@@ -16,6 +16,7 @@
 #import "SMSViewController.h"
 #import "ContactPickerViewController.h"
 #import "MONActivityIndicatorView.h"
+#import "TSMessageView.h"
 
 
 @interface LoginViewController () <RESideMenuDelegate, MONActivityIndicatorViewDelegate>
@@ -65,12 +66,14 @@
 {
     LoginView *loginView = [[LoginView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
     self.view = loginView;
-    
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+
 }
 
+
+//random color generator for HUD
 - (UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView
       circleBackgroundColorAtIndex:(NSUInteger)index {
-    // For a random background color for a particular circle
     CGFloat red   = (arc4random() % 256)/255.0;
     CGFloat green = (arc4random() % 256)/255.0;
     CGFloat blue  = (arc4random() % 256)/255.0;
@@ -80,6 +83,14 @@
 
 -(void)login:(id)sender
 {
+    LoginView *view = (LoginView *)self.view;
+//    static NSString *const emailRegEx =
+//    @"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\\b";
+//    NSPredicate *emailPred = [NSPredicate predicateWithFormat:@"self MATCHES[c] %@", emailRegEx];
+//    if (![emailPred evaluateWithObject:(view.nameField).text]) {
+//        //NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"Please enter a valid e-mail address", nil) };
+//        return [TSMessage showNotificationWithTitle:@"Please enter a valid email address" type:TSMessageNotificationTypeError];
+//    }
     MONActivityIndicatorView *indicatorView = [[MONActivityIndicatorView alloc] init];
     indicatorView.delegate = self;
     indicatorView.numberOfCircles = 5;
@@ -88,41 +99,19 @@
     indicatorView.duration = 0.8;
     indicatorView.delay = 0.2;
     indicatorView.center = self.view.center;
-    
     [self.view addSubview:indicatorView];
-//    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [indicatorView startAnimating];
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        // Do something...
+
+    //LoginView *view = (LoginView *)self.view;
+    //MAKE THE FUCKING REQUEST!!!!
         
-    
-//    LoginView *view = (LoginView *)self.view;
-//    NSURL *baseURL = [NSURL URLWithString:@"https://moolti-auth-example.herokuapp.com/token"];
-//    AFOAuth2Manager *Oauth2Manager = [[AFOAuth2Manager alloc]initWithBaseURL:baseURL
-//                                                                clientID:kClientId
-//                                                                      secret:kClientSecret];
-//    
-//    [Oauth2Manager authenticateUsingOAuthWithURLString:@"/oauth/token"
-//                                              username:@"username"
-//                                              password:@"password"
-//                                                 scope:@"email"
-//                                               success:^(AFOAuthCredential *credential) {
-//                                                   NSLog(@"Token: %@", credential.accessToken);
-//                                                   [self dismissViewControllerAnimated:YES completion:nil];
-//                                               }
-//                                               failure:^(NSError *error) {
-//                                                   NSLog(@"Error: %@", error);
-//                                               }];
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    
     _navController = [[UINavigationController alloc]initWithRootViewController:[[ContactPickerViewController alloc]init]];
     DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];
     DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc]init];
     RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
     
-    //general menu settings
     sidemenuViewController.backgroundImage = [UIImage imageNamed:@"homebackground"];
     sidemenuViewController.menuPreferredStatusBarStyle = 1;
     sidemenuViewController.delegate = self;
@@ -131,20 +120,21 @@
     sidemenuViewController.contentViewShadowOpacity = 0.6;
     sidemenuViewController.contentViewShadowRadius = 12;
     sidemenuViewController.contentViewShadowEnabled = YES;
-    
         sleep(4.0);
-    
     [self presentViewController:sidemenuViewController animated: NO completion:nil];
         [indicatorView stopAnimating];
-        //[MBProgressHUD hideHUDForView:self.view animated:YES];
     });
-    
-    NSLog(@"I got tapped");
-    
-
 }
 
-- (void)viewDidLoad {
+- (void)loginViewController:(LoginViewController *)loginViewController didFinishWithLogin:(BOOL)loggedIn {
+    [self dismissViewControllerAnimated:YES completion:^(){
+        if(loggedIn){
+            NSLog(@"Logged in");
+        }
+    }];
+}
+
+-(void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.leftBarButtonItem.enabled = NO;

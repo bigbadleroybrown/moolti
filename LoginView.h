@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginView : UIView
+@interface LoginView : UIView <UITextFieldDelegate>
 
-@property (strong, nonatomic) UITextField *nameField;
-@property (strong, nonatomic) UITextField *passwordField;
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) UILabel *errorLabel;
 @property (strong, nonatomic) UIButton *LoginInButton;
-
--(void)showError:(NSString*)error;
 
 @end

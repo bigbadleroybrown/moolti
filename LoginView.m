@@ -7,7 +7,7 @@
 //
 
 #define loginErrorWidth 300.0
-#define loginViewTopMargin 100.0
+#define loginViewTopMargin 120.0
 #define loginViewRightMargin 20.0
 #define loginViewLeftMargin 20.0
 #define loginViewSpacing 10.0
@@ -29,6 +29,7 @@
         [self.nameField setFont:[UIFont fontWithName:@"Avenir-Light" size:loginFontSize]];
         [self.nameField setTextAlignment:NSTextAlignmentCenter];
         [self addSubview:self.nameField];
+        self.nameField.delegate = self;
         
         self.passwordField = [[UITextField alloc]initWithFrame:CGRectZero];
         self.passwordField.secureTextEntry = YES;
@@ -37,16 +38,20 @@
         [self.passwordField setFont:[UIFont fontWithName:@"Avenir-Light" size:loginFontSize]];
         [self.passwordField setTextAlignment:NSTextAlignmentCenter];
         [self addSubview:self.passwordField];
-        
-        self.errorLabel = [[UILabel alloc]initWithFrame:CGRectZero];
-        [self.errorLabel setFont:[UIFont fontWithName:@"Avenir-Light" size:errorSize]];
-        [self.errorLabel setTextAlignment:NSTextAlignmentCenter];
-        [self.errorLabel setTextColor:[UIColor redColor]];
-        [self addSubview:self.errorLabel];
-
+        self.passwordField.delegate = self;
     }
     
     return self;
+}
+
+#pragma mark UITextField Delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.nameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+    
+    return YES;
 }
 
 -(void)layoutSubviews
@@ -66,31 +71,8 @@
                                           (loginViewLeftMargin +
                                            loginViewRightMargin),
                                           44.0);
-    
-    self.errorLabel.frame = CGRectMake(self.bounds.size.width / 2 -
-                                       loginErrorWidth / 2,
-                                       self.passwordField.frame.origin.y +
-                                       self.passwordField.bounds.size.height +
-                                       loginViewSpacing,
-                                       loginErrorWidth, 44.0);
-    
-    self.LoginInButton.frame = CGRectMake(loginViewLeftMargin,
-                                          self.passwordField.frame.origin.y +
-                                          self.passwordField.bounds.size.height +
-                                          loginViewSpacing,
-                                          self.bounds.size.width -
-                                          (loginViewLeftMargin +
-                                           loginViewRightMargin),
-                                          44.0);
 
 }
-
--(void)showError:(NSString *)error
-{
-    [self.errorLabel setText:@"Error"];
-    
-}
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

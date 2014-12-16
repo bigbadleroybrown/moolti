@@ -103,10 +103,8 @@ static NSString *const BaseURLString = @"https://moolti.herokuapp.com/";
 
 -(void)makeCollectionRequest
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     NSString *urlString = [NSString stringWithFormat:@"%@/collections/media", BaseURLString];
     NSURL *url = [NSURL URLWithString:urlString];
