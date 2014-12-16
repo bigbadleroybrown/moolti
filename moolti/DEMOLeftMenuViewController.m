@@ -9,7 +9,6 @@
 #import "DEMOLeftMenuViewController.h"
 #import "DEMOFirstViewController.h"
 #import "inboxInterface.h"
-#import "FontAwesomeKit/FontAwesomeKit.h"
 #import "GalleryVC.h"
 #import "MWPhotoBrowser.h"
 #import "CollectionTableView.h"

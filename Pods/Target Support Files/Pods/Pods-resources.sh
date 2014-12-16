@@ -47,11 +47,7 @@ install_resource()
       ;;
   esac
 }
-          install_resource "FontAwesomeKit/FontAwesomeKit/FontAwesome.otf"
-                    install_resource "FontAwesomeKit/FontAwesomeKit/foundation-icons.ttf"
-                    install_resource "FontAwesomeKit/FontAwesomeKit/ionicons.ttf"
-                    install_resource "FontAwesomeKit/FontAwesomeKit/zocial-regular-webfont.ttf"
-                    install_resource "JSQMessagesViewController/JSQMessagesViewController/Assets/JSQMessagesAssets.bundle"
+          install_resource "JSQMessagesViewController/JSQMessagesViewController/Assets/JSQMessagesAssets.bundle"
                     install_resource "JSQMessagesViewController/JSQMessagesViewController/Assets/Strings/Base.lproj"
                     install_resource "JSQMessagesViewController/JSQMessagesViewController/Assets/Strings/de.lproj"
                     install_resource "JSQMessagesViewController/JSQMessagesViewController/Assets/Strings/en.lproj"

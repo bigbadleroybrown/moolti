@@ -19,6 +19,7 @@
 #import "TSMessageView.h"
 
 
+
 @interface LoginViewController () <RESideMenuDelegate, MONActivityIndicatorViewDelegate>
 
 @property (nonatomic, strong) UINavigationController *navController;
@@ -27,6 +28,7 @@
 
 -(void)cancel:(id)sender;
 -(void)login:(id)sender;
+
 
 @end
 
@@ -83,14 +85,6 @@
 
 -(void)login:(id)sender
 {
-    LoginView *view = (LoginView *)self.view;
-//    static NSString *const emailRegEx =
-//    @"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\\b";
-//    NSPredicate *emailPred = [NSPredicate predicateWithFormat:@"self MATCHES[c] %@", emailRegEx];
-//    if (![emailPred evaluateWithObject:(view.nameField).text]) {
-//        //NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"Please enter a valid e-mail address", nil) };
-//        return [TSMessage showNotificationWithTitle:@"Please enter a valid email address" type:TSMessageNotificationTypeError];
-//    }
     MONActivityIndicatorView *indicatorView = [[MONActivityIndicatorView alloc] init];
     indicatorView.delegate = self;
     indicatorView.numberOfCircles = 5;
@@ -104,8 +98,41 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 
-    //LoginView *view = (LoginView *)self.view;
+    LoginView *view = (LoginView *)self.view;
     //MAKE THE FUCKING REQUEST!!!!
+        
+        NSString *name = view.nameField.text;
+        NSString *password = view.passwordField.text;
+        NSString *loginString = [NSString stringWithFormat:@"%@:%@", name, password];
+        
+        NSData *data = [loginString dataUsingEncoding:NSUTF8StringEncoding];
+        NSString *base64Encoded = [data base64EncodedStringWithOptions:0];
+        NSString *combinedString = [NSString stringWithFormat:@"Basic " "%@",base64Encoded];
+        
+        NSURL *URL = [NSURL URLWithString:@"https://moolti-auth-example.herokuapp.com/token"];
+        //NSURL *URL = [NSURL URLWithString:@"http://localhost:10000/token"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:combinedString forHTTPHeaderField:@"Authorization"];
+
+
+        NSString *postString = @"grant_type=client_credentials";
+        NSData *encodedBody = [postString dataUsingEncoding:NSUTF8StringEncoding];
+        //[request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+        request.HTTPBody = encodedBody;
+        AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        op.responseSerializer = [AFJSONResponseSerializer serializer];
+        op.responseSerializer.acceptableContentTypes = [op.responseSerializer.acceptableContentTypes setByAddingObject:@"application/hal+json"];
+        [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSLog(@"%@ ",responseObject);
+            NSLog(@"%ld", (long)[operation.response statusCode]);
+
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", [error localizedDescription]);
+            
+        }];
+        [op start];
         
     _navController = [[UINavigationController alloc]initWithRootViewController:[[ContactPickerViewController alloc]init]];
     DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];

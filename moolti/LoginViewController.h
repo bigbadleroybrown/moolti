@@ -19,6 +19,6 @@
 @protocol LoginViewControllerDelegate <NSObject>
 
 -(void)loginViewController:(LoginViewController*)loginViewController didFinishWithLogin:(BOOL)loggedIn;
-
++ (void)basicAuthForRequest:(NSMutableURLRequest *)request withUsername:(NSString *)username andPassword:(NSString *)password;
 @end
 

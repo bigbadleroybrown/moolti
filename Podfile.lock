@@ -23,23 +23,7 @@ PODS:
   - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CNPGridMenu (0.2.1)
   - DACircularProgress (2.2.0)
-  - FontAwesomeKit (2.1.8):
-    - FontAwesomeKit/Core (= 2.1.8)
-    - FontAwesomeKit/FontAwesome (= 2.1.8)
-    - FontAwesomeKit/FoundationIcons (= 2.1.8)
-    - FontAwesomeKit/IonIcons (= 2.1.8)
-    - FontAwesomeKit/Zocial (= 2.1.8)
-  - FontAwesomeKit/Core (2.1.8)
-  - FontAwesomeKit/FontAwesome (2.1.8):
-    - FontAwesomeKit/Core
-  - FontAwesomeKit/FoundationIcons (2.1.8):
-    - FontAwesomeKit/Core
-  - FontAwesomeKit/IonIcons (2.1.8):
-    - FontAwesomeKit/Core
-  - FontAwesomeKit/Zocial (2.1.8):
-    - FontAwesomeKit/Core
   - HexColors (2.2.1)
   - JBKenBurnsView (1.0)
   - JSQMessagesViewController (6.1.0):
@@ -70,8 +54,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - AFNetworking-RACExtensions (from `https://github.com/knshiro/AFNetworking-RACExtensions.git`)
-  - CNPGridMenu
-  - FontAwesomeKit (~> 2.1.0)
   - JBKenBurnsView
   - JSQMessagesViewController
   - MONActivityIndicatorView
@@ -91,9 +73,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   AFNetworking-RACExtensions: 4f7633edc5618e771f1c034ec3eb6974fe9eb441
-  CNPGridMenu: 0a8f8303cc0e141ad483d8b9bc8fdf48bfa577b6
   DACircularProgress: 3b41941891a56dc6aa17971f5322a9a38a6f446e
-  FontAwesomeKit: a2edea3111dab107b4cc43b85881b404eb063385
   HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
   JBKenBurnsView: fff26eaeb0d11a595a371427b0c0b37fe9a7ceeb
   JSQMessagesViewController: 8998c086bf6db5d6190376041903d5be2961f03f
