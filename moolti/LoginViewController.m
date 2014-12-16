@@ -94,62 +94,60 @@
     indicatorView.delay = 0.2;
     indicatorView.center = self.view.center;
     [self.view addSubview:indicatorView];
-    [indicatorView startAnimating];
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    
+        [indicatorView startAnimating];
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 
-    LoginView *view = (LoginView *)self.view;
-    //MAKE THE FUCKING REQUEST!!!!
-        
+        LoginView *view = (LoginView *)self.view;
         NSString *name = view.nameField.text;
         NSString *password = view.passwordField.text;
         NSString *loginString = [NSString stringWithFormat:@"%@:%@", name, password];
-        
         NSData *data = [loginString dataUsingEncoding:NSUTF8StringEncoding];
         NSString *base64Encoded = [data base64EncodedStringWithOptions:0];
         NSString *combinedString = [NSString stringWithFormat:@"Basic " "%@",base64Encoded];
-        
         NSURL *URL = [NSURL URLWithString:@"https://moolti-auth-example.herokuapp.com/token"];
-        //NSURL *URL = [NSURL URLWithString:@"http://localhost:10000/token"];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
         [request setHTTPMethod:@"POST"];
         [request setValue:combinedString forHTTPHeaderField:@"Authorization"];
-
-
-        NSString *postString = @"grant_type=client_credentials";
+       NSString *postString = @"grant_type=client_credentials";
         NSData *encodedBody = [postString dataUsingEncoding:NSUTF8StringEncoding];
-        //[request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
         request.HTTPBody = encodedBody;
         AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
         op.responseSerializer = [AFJSONResponseSerializer serializer];
         op.responseSerializer.acceptableContentTypes = [op.responseSerializer.acceptableContentTypes setByAddingObject:@"application/hal+json"];
         [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            
-            NSLog(@"%@ ",responseObject);
             NSLog(@"%ld", (long)[operation.response statusCode]);
-
+            if ([operation.response statusCode] ==200) {
+                _navController = [[UINavigationController alloc]initWithRootViewController:[[ContactPickerViewController alloc]init]];
+                DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];
+                DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc]init];
+                RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
+                
+                sidemenuViewController.backgroundImage = [UIImage imageNamed:@"homebackground"];
+                sidemenuViewController.menuPreferredStatusBarStyle = 1;
+                sidemenuViewController.delegate = self;
+                sidemenuViewController.contentViewShadowColor = [UIColor blackColor];
+                sidemenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+                sidemenuViewController.contentViewShadowOpacity = 0.6;
+                sidemenuViewController.contentViewShadowRadius = 12;
+                sidemenuViewController.contentViewShadowEnabled = YES;
+                //sleep(4.0);
+                [self presentViewController:sidemenuViewController animated: NO completion:nil];
+                [indicatorView stopAnimating];
+            }
+    
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", [error localizedDescription]);
-            
+            [TSMessage showNotificationWithTitle:@"There was a Problem"
+                                        subtitle:@"Please enter a valid username and password."
+                                            type:TSMessageNotificationTypeError];
+            [indicatorView stopAnimating];
         }];
+        
         [op start];
         
-    _navController = [[UINavigationController alloc]initWithRootViewController:[[ContactPickerViewController alloc]init]];
-    DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];
-    DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc]init];
-    RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
     
-    sidemenuViewController.backgroundImage = [UIImage imageNamed:@"homebackground"];
-    sidemenuViewController.menuPreferredStatusBarStyle = 1;
-    sidemenuViewController.delegate = self;
-    sidemenuViewController.contentViewShadowColor = [UIColor blackColor];
-    sidemenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
-    sidemenuViewController.contentViewShadowOpacity = 0.6;
-    sidemenuViewController.contentViewShadowRadius = 12;
-    sidemenuViewController.contentViewShadowEnabled = YES;
-        sleep(4.0);
-    [self presentViewController:sidemenuViewController animated: NO completion:nil];
-        [indicatorView stopAnimating];
     });
 }
 
