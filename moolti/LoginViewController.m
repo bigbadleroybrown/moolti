@@ -15,6 +15,7 @@
 #import "DEMORightMenuViewController.h"
 #import "SMSViewController.h"
 #import "ContactPickerViewController.h"
+#import "THContactPickerViewController.h"
 #import "MONActivityIndicatorView.h"
 #import "TSMessageView.h"
 

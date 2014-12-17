@@ -76,6 +76,14 @@
 		2E5BFD741A38C1C900D17971 /* icon-checkbox-selected-green-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD6E1A38C1C900D17971 /* icon-checkbox-selected-green-25x25@2x.png */; };
 		2E5BFD751A38C1C900D17971 /* icon-checkbox-unselected-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD6F1A38C1C900D17971 /* icon-checkbox-unselected-25x25.png */; };
 		2E5BFD761A38C1C900D17971 /* icon-checkbox-unselected-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5BFD701A38C1C900D17971 /* icon-checkbox-unselected-25x25@2x.png */; };
+		2E6A3FB11A4246F400F722A9 /* THContactBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3FA61A4246F400F722A9 /* THContactBubble.m */; };
+		2E6A3FB21A4246F400F722A9 /* THContactPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3FA81A4246F400F722A9 /* THContactPickerView.m */; };
+		2E6A3FB31A4246F400F722A9 /* THContactPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3FAA1A4246F400F722A9 /* THContactPickerViewController.m */; };
+		2E6A3FB41A4246F400F722A9 /* THBubbleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3FAC1A4246F400F722A9 /* THBubbleColor.m */; };
+		2E6A3FB51A4246F400F722A9 /* THContactPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3FAE1A4246F400F722A9 /* THContactPickerTableViewCell.m */; };
+		2E6A3FB61A4246F400F722A9 /* THContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3FB01A4246F400F722A9 /* THContact.m */; };
+		2E6A3FB91A42470300F722A9 /* THContactPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6A3FB71A42470300F722A9 /* THContactPickerViewController.xib */; };
+		2E6A3FBA1A42470300F722A9 /* THContactPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6A3FB81A42470300F722A9 /* THContactPickerTableViewCell.xib */; };
 		2E87570B1A35FB7B00A7C937 /* SMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E87570A1A35FB7B00A7C937 /* SMSViewController.m */; };
 		2E87570E1A35FD8E00A7C937 /* SMSDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E87570D1A35FD8E00A7C937 /* SMSDataModel.m */; };
 		2E94073D1A1A8C6A0099F37C /* inboxInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E94073C1A1A8C6A0099F37C /* inboxInterface.storyboard */; };
@@ -210,6 +218,20 @@
 		2E5BFD6E1A38C1C900D17971 /* icon-checkbox-selected-green-25x25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-checkbox-selected-green-25x25@2x.png"; path = "images/icon-checkbox-selected-green-25x25@2x.png"; sourceTree = "<group>"; };
 		2E5BFD6F1A38C1C900D17971 /* icon-checkbox-unselected-25x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-checkbox-unselected-25x25.png"; path = "images/icon-checkbox-unselected-25x25.png"; sourceTree = "<group>"; };
 		2E5BFD701A38C1C900D17971 /* icon-checkbox-unselected-25x25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-checkbox-unselected-25x25@2x.png"; path = "images/icon-checkbox-unselected-25x25@2x.png"; sourceTree = "<group>"; };
+		2E6A3FA51A4246F400F722A9 /* THContactBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactBubble.h; sourceTree = "<group>"; };
+		2E6A3FA61A4246F400F722A9 /* THContactBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactBubble.m; sourceTree = "<group>"; };
+		2E6A3FA71A4246F400F722A9 /* THContactPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactPickerView.h; sourceTree = "<group>"; };
+		2E6A3FA81A4246F400F722A9 /* THContactPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactPickerView.m; sourceTree = "<group>"; };
+		2E6A3FA91A4246F400F722A9 /* THContactPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactPickerViewController.h; sourceTree = "<group>"; };
+		2E6A3FAA1A4246F400F722A9 /* THContactPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactPickerViewController.m; sourceTree = "<group>"; };
+		2E6A3FAB1A4246F400F722A9 /* THBubbleColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THBubbleColor.h; sourceTree = "<group>"; };
+		2E6A3FAC1A4246F400F722A9 /* THBubbleColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THBubbleColor.m; sourceTree = "<group>"; };
+		2E6A3FAD1A4246F400F722A9 /* THContactPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactPickerTableViewCell.h; sourceTree = "<group>"; };
+		2E6A3FAE1A4246F400F722A9 /* THContactPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactPickerTableViewCell.m; sourceTree = "<group>"; };
+		2E6A3FAF1A4246F400F722A9 /* THContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContact.h; sourceTree = "<group>"; };
+		2E6A3FB01A4246F400F722A9 /* THContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContact.m; sourceTree = "<group>"; };
+		2E6A3FB71A42470300F722A9 /* THContactPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THContactPickerViewController.xib; sourceTree = "<group>"; };
+		2E6A3FB81A42470300F722A9 /* THContactPickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THContactPickerTableViewCell.xib; sourceTree = "<group>"; };
 		2E8757091A35FB7B00A7C937 /* SMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSViewController.h; sourceTree = "<group>"; };
 		2E87570A1A35FB7B00A7C937 /* SMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSViewController.m; sourceTree = "<group>"; };
 		2E87570C1A35FD8E00A7C937 /* SMSDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSDataModel.h; sourceTree = "<group>"; };
@@ -382,6 +404,27 @@
 			path = mooltiMedia;
 			sourceTree = "<group>";
 		};
+		2E6A3FA41A4246E200F722A9 /* contacts2 */ = {
+			isa = PBXGroup;
+			children = (
+				2E6A3FA51A4246F400F722A9 /* THContactBubble.h */,
+				2E6A3FA61A4246F400F722A9 /* THContactBubble.m */,
+				2E6A3FA71A4246F400F722A9 /* THContactPickerView.h */,
+				2E6A3FA81A4246F400F722A9 /* THContactPickerView.m */,
+				2E6A3FA91A4246F400F722A9 /* THContactPickerViewController.h */,
+				2E6A3FAA1A4246F400F722A9 /* THContactPickerViewController.m */,
+				2E6A3FAB1A4246F400F722A9 /* THBubbleColor.h */,
+				2E6A3FAC1A4246F400F722A9 /* THBubbleColor.m */,
+				2E6A3FAD1A4246F400F722A9 /* THContactPickerTableViewCell.h */,
+				2E6A3FAE1A4246F400F722A9 /* THContactPickerTableViewCell.m */,
+				2E6A3FAF1A4246F400F722A9 /* THContact.h */,
+				2E6A3FB01A4246F400F722A9 /* THContact.m */,
+				2E6A3FB71A42470300F722A9 /* THContactPickerViewController.xib */,
+				2E6A3FB81A42470300F722A9 /* THContactPickerTableViewCell.xib */,
+			);
+			name = contacts2;
+			sourceTree = "<group>";
+		};
 		2E8757081A35F52B00A7C937 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +518,7 @@
 		2ECE5E7A1A159DA0000F78BD /* moolti */ = {
 			isa = PBXGroup;
 			children = (
+				2E6A3FA41A4246E200F722A9 /* contacts2 */,
 				2EB719391A37AF1300ED3E01 /* contacts */,
 				2E1D54681A1E689900D304D1 /* mooltiMedia */,
 				2E8757081A35F52B00A7C937 /* Views */,
@@ -654,6 +698,7 @@
 				2ECE5E8A1A159DA0000F78BD /* Main.storyboard in Resources */,
 				2EF533EB1A1FCC3300F5FCCF /* house.jpg in Resources */,
 				2E1D54B81A1E689900D304D1 /* dv1.jpg in Resources */,
+				2E6A3FB91A42470300F722A9 /* THContactPickerViewController.xib in Resources */,
 				2E5BFD661A38BA2D00D17971 /* ContactPickerViewController.xib in Resources */,
 				2E1D54B61A1E689900D304D1 /* ch8.jpg in Resources */,
 				2E1D54AC1A1E689900D304D1 /* ch1.jpg in Resources */,
@@ -696,6 +741,7 @@
 				2E1D54BE1A1E689900D304D1 /* dv15.jpg in Resources */,
 				2E1D54CE1A1EA6AA00D304D1 /* photo2.jpg in Resources */,
 				2E1D54AD1A1E689900D304D1 /* ch10.jpg in Resources */,
+				2E6A3FBA1A42470300F722A9 /* THContactPickerTableViewCell.xib in Resources */,
 				2E1D549C1A1E689900D304D1 /* ce13.jpg in Resources */,
 				2E1D54B31A1E689900D304D1 /* ch5.jpg in Resources */,
 				2E1D54C61A1E689900D304D1 /* dv9.jpg in Resources */,
@@ -759,6 +805,7 @@
 			files = (
 				2E5BFD611A38999500D17971 /* ContactPickerTableViewCell.m in Sources */,
 				2E94074B1A1A92300099F37C /* DEMOLeftMenuViewController.m in Sources */,
+				2E6A3FB51A4246F400F722A9 /* THContactPickerTableViewCell.m in Sources */,
 				2E3373031A3F83A800453C5D /* AFHTTPRequestSerializer+OAuth2.m in Sources */,
 				2E9407481A1A92240099F37C /* DEMOFirstViewController.m in Sources */,
 				2EB7193C1A37AF3300ED3E01 /* ContactBubble.m in Sources */,
@@ -768,17 +815,22 @@
 				2ECE5E7E1A159DA0000F78BD /* main.m in Sources */,
 				2E1D53E01A1BA1DD00D304D1 /* DEMORightMenuViewController.m in Sources */,
 				2E9407401A1A8CE90099F37C /* inboxInterface.m in Sources */,
+				2E6A3FB31A4246F400F722A9 /* THContactPickerViewController.m in Sources */,
 				2ECE5E841A159DA0000F78BD /* moolti.xcdatamodeld in Sources */,
 				2E3372FE1A3F667C00453C5D /* LoginViewController.m in Sources */,
 				2E87570B1A35FB7B00A7C937 /* SMSViewController.m in Sources */,
 				2E5BFD5E1A3898EF00D17971 /* ContactPickerViewController.m in Sources */,
 				2E1D53E81A1BEBE500D304D1 /* GalleryVC.m in Sources */,
+				2E6A3FB41A4246F400F722A9 /* THBubbleColor.m in Sources */,
+				2E6A3FB21A4246F400F722A9 /* THContactPickerView.m in Sources */,
+				2E6A3FB11A4246F400F722A9 /* THContactBubble.m in Sources */,
 				2E1D53F11A1D617D00D304D1 /* CollectionCell.m in Sources */,
 				2E87570E1A35FD8E00A7C937 /* SMSDataModel.m in Sources */,
 				2E1D53EC1A1D0F8D00D304D1 /* CollectionTableView.m in Sources */,
 				2EB7193F1A37B12000ED3E01 /* BubbleColor.m in Sources */,
 				2E3372FB1A3F666300453C5D /* LoginView.m in Sources */,
 				2E5BFD641A389CB900D17971 /* Contact.m in Sources */,
+				2E6A3FB61A4246F400F722A9 /* THContact.m in Sources */,
 				2E3373041A3F83A800453C5D /* AFOAuth2Manager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@
 #import "DEMORightMenuViewController.h"
 #import "SMSViewController.h"
 #import "ContactPickerViewController.h"
+#import "THContactPickerViewController.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "LoginViewController.h"
 
@@ -30,7 +31,7 @@
     //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     //[self.window setRootViewController:_navController];
-    _navController = [[UINavigationController alloc]initWithRootViewController:[[ContactPickerViewController alloc]init]];
+    _navController = [[UINavigationController alloc]initWithRootViewController:[[THContactPickerViewController alloc]init]];
     DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];
     DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc]init];
     RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];

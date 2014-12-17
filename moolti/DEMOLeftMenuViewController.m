@@ -14,6 +14,7 @@
 #import "CollectionTableView.h"
 #import "SMSViewController.h"
 #import "ContactPickerViewController.h"
+#import "THContactPickerViewController.h"
 
 @interface DEMOLeftMenuViewController ()
 {
@@ -59,7 +60,7 @@
        
         case 0:
         
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ContactPickerViewController alloc] init]]
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[THContactPickerViewController alloc] init]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
