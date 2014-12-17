@@ -19,6 +19,16 @@
 @end
 
 @implementation DEMORightMenuViewController
+static LoginViewController *sharedInstance;
+
++(LoginViewController *)sharedInstance
+{
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        sharedInstance = [[LoginViewController alloc]init];
+    });
+    return sharedInstance;
+}
 
 - (void)viewDidLoad
 {
@@ -62,12 +72,11 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:
-            
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]]
-                                                         animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
-            
-            break;
+//            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController: sharedInstance]];
+//                                                         
+//            [self.sideMenuViewController hideMenuViewController];
+//            
+//            break;
         default:
             break;
     }

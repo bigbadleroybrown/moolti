@@ -34,6 +34,8 @@
 
 @implementation LoginViewController
 
+static LoginViewController *sharedInstance;
+
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -59,17 +61,29 @@
         
         NSDictionary* barButtonItemAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Avenir-Light" size:15.0f]};
         [[UIBarButtonItem appearance] setTitleTextAttributes: barButtonItemAttributes forState:UIControlStateNormal];
+        
     }
     
     return self;
 }
 
++(LoginViewController *)sharedInstance
+{
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        sharedInstance = [[LoginViewController alloc]init];
+    });
+    return sharedInstance;
+}
+
+
+
 -(void)loadView
 {
     LoginView *loginView = [[LoginView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
     self.view = loginView;
+    
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
-
 }
 
 
@@ -98,7 +112,6 @@
         [indicatorView startAnimating];
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-
         LoginView *view = (LoginView *)self.view;
         NSString *name = view.nameField.text;
         NSString *password = view.passwordField.text;
@@ -118,8 +131,9 @@
         op.responseSerializer.acceptableContentTypes = [op.responseSerializer.acceptableContentTypes setByAddingObject:@"application/hal+json"];
         [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"%ld", (long)[operation.response statusCode]);
+            NSLog(@"JSON:%@", responseObject);
             if ([operation.response statusCode] ==200) {
-                _navController = [[UINavigationController alloc]initWithRootViewController:[[ContactPickerViewController alloc]init]];
+                _navController = [[UINavigationController alloc]initWithRootViewController:[[SMSViewController alloc]init]];
                 DEMOLeftMenuViewController *leftMenuViewController= [[DEMOLeftMenuViewController alloc]init];
                 DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc]init];
                 RESideMenu *sidemenuViewController = [[RESideMenu alloc]initWithContentViewController:_navController leftMenuViewController:leftMenuViewController rightMenuViewController: rightMenuViewController];
@@ -132,11 +146,10 @@
                 sidemenuViewController.contentViewShadowOpacity = 0.6;
                 sidemenuViewController.contentViewShadowRadius = 12;
                 sidemenuViewController.contentViewShadowEnabled = YES;
-                //sleep(4.0);
+                sleep(3.0);
                 [self presentViewController:sidemenuViewController animated: NO completion:nil];
                 [indicatorView stopAnimating];
             }
-    
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", [error localizedDescription]);
             [TSMessage showNotificationWithTitle:@"There was a Problem"
@@ -144,10 +157,7 @@
                                             type:TSMessageNotificationTypeError];
             [indicatorView stopAnimating];
         }];
-        
         [op start];
-        
-    
     });
 }
 

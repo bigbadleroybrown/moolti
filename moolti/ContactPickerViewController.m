@@ -268,12 +268,12 @@ UIBarButtonItem *barButton;
     
     contactNameLabel.text = [contact fullName];
     mobilePhoneNumberLabel.text = contact.phone;
-    if (contact.image) {
+    if(contact.image) {
         contactImage.image = contact.image;
     }
-    
     contactImage.layer.masksToBounds = YES;
     contactImage.layer.cornerRadius = 20;
+    
     
     UIImage *image;
     if ([self.selectedContacts containsObject:[self.filteredContacts objectAtIndex:indexPath.row]]) {
