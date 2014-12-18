@@ -642,6 +642,7 @@
 				TargetAttributes = {
 					2ECE5E771A159DA0000F78BD = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = PSEJ82K8NC;
 					};
 					2ECE5E931A159DA0000F78BD = {
 						CreatedOnToolsVersion = 6.1;
@@ -957,6 +958,7 @@
 			baseConfigurationReference = C65D613D9FBA29311FE8CF9E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = moolti/Info.plist;
@@ -971,6 +973,7 @@
 			baseConfigurationReference = 9444A7C2B6389B10D01D79EA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = moolti/Info.plist;
