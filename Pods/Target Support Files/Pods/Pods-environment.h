@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 0
 
+// CNPGridMenu
+#define COCOAPODS_POD_AVAILABLE_CNPGridMenu
+#define COCOAPODS_VERSION_MAJOR_CNPGridMenu 0
+#define COCOAPODS_VERSION_MINOR_CNPGridMenu 2
+#define COCOAPODS_VERSION_PATCH_CNPGridMenu 1
+
 // DACircularProgress
 #define COCOAPODS_POD_AVAILABLE_DACircularProgress
 #define COCOAPODS_VERSION_MAJOR_DACircularProgress 2
